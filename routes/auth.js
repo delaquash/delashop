@@ -23,7 +23,21 @@ router.post('/register', async(req, res) => {
 
 // login
 router.post('/login', async(req, res) => {
-    
+    try {
+        // find the user
+        const user = await User.findOne({username : req.body.username });
+    // error message if user doesnt exist 
+        !user && res.status(401).json("Wrong credentials")
+        /* Decrypting the password that was encrypted in the register route. */
+        const hashedPassword = CryptoJS.AES.decrypt(user.password, process.env.PASS_SEC)
+        const password = hashedPassword.toString(CryptoJS.enc.Utf8);
+       /* Checking if the password is not equal to the password in the request body and if it is not,
+       it will return a 401 status and a message saying "Invalid login details" */
+        password !== req.body.password && res.status(401).json('Invalid login details')
+        res.status(200).json(user)
+    } catch (err) {
+        res.status(500).json(err)
+    } 
 })
 
 module.exports = router;
