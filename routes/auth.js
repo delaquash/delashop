@@ -1,8 +1,7 @@
+const router = require('express').Router();
 const User = require('../models/User');
 const CryptoJS = require("crypto-js"); 
-
-const router = require('express').Router();
-
+const jwt = require ("jsonwebtoken");
 
 // Register
 router.post('/register', async(req, res) => {
@@ -30,11 +29,22 @@ router.post('/login', async(req, res) => {
         !user && res.status(401).json("Wrong credentials")
         /* Decrypting the password that was encrypted in the register route. */
         const hashedPassword = CryptoJS.AES.decrypt(user.password, process.env.PASS_SEC)
-        const password = hashedPassword.toString(CryptoJS.enc.Utf8);
+        const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
        /* Checking if the password is not equal to the password in the request body and if it is not,
        it will return a 401 status and a message saying "Invalid login details" */
-        password !== req.body.password && res.status(401).json('Invalid login details')
-        res.status(200).json(user)
+        originalPassword !== req.body.password && res.status(401).json('Invalid login details')
+
+        /* This is creating a token for the user. */
+        const accessToken = jwt.sign({
+            id: user._id,
+            isAdmin: user.isAdmin,
+        }, process.env.JWT_SECRET,
+        { expiresIn: "3d"});
+
+        /* Destructuring the user object and removing the password property from the object which is username. */
+        const { password, ...others } = user._doc
+        res.status(200).json({...others, accessToken});
+        
     } catch (err) {
         res.status(500).json(err)
     } 
