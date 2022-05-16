@@ -17,9 +17,9 @@ const  mongoose  = require("mongoose");
      },
      isAdmin: {
          type: Boolean,
-         required: false
+         default: false
      }},
-      {timeStamps : true}
+      {timestamps : true}
  )
 
  module.exports = mongoose.model("User",UserSchema)

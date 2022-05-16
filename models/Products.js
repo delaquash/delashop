@@ -28,7 +28,7 @@ const { boolean } = require("webidl-conversions");
         type: Number,
         required: true,
      }},
-      {timeStamps : true}
+      {timestamps : true}
  )
 
  module.exports = mongoose.model("Product",ProductSchema)
