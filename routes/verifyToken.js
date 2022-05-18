@@ -22,6 +22,12 @@ const verifyToken =(req, res, next) => {
     }
 };
 
+/**
+ * If the user is not an admin, then the user must be the same as the user in the params.
+ * @param req - the request object
+ * @param res - the response object
+ * @param next - a function that will be called when the middleware is done.
+ */
 const verifyTokenAuthorization =(req, res, next)=> {
         verifyToken(req, res, () => {
             if(req.user.id === req.params.id || req.user.isAdmin) {
@@ -32,4 +38,20 @@ const verifyTokenAuthorization =(req, res, next)=> {
         })
 }
 
-module.exports =  { verifyToken, verifyTokenAuthorization };
+/**
+ * If the user is not an admin, then they are not allowed to do so.
+ * @param req - the request object
+ * @param res - the response object
+ * @param next - a function that will be called when the middleware is done.
+ */
+const verifyTokenAdmin=(req, res, next) => {
+    verifyToken(req, res, () => {
+        if(req.user.isAdmin){
+            next()
+        } else {
+            res.status(403).json('You are not allowed to do so')
+        }
+    })
+}
+
+module.exports =  { verifyToken, verifyTokenAuthorization, verifyTokenAdmin };
