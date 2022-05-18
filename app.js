@@ -18,6 +18,7 @@ mongoose.connect(process.env.MONGO_URL)
 app.use(express.json())
 // Routes
 app.use('/api/user', user);
+app.use('/api/user/:id', user)
 app.use('/api/auth', authRouter);
 
 app.listen(process.env.PORT  || 5000, () => {
