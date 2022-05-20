@@ -39,14 +39,14 @@ router.delete('/:id', verifyTokenAdmin, async (req, res)=> {
     }
 })
 
-// /* Getting the product by id. */
-// router.get('/:id', async(req, res) => {
-//     try {
-//         const product = await Product.find();
-//         res.status(200).json(product)
-//     } catch (error) {
-//         res.status(500).json(error)
-//     }
-// })
+/* Getting the product by id. */
+router.get('/:id', async(req, res) => {
+    try {
+        const product = await Product.find();
+        res.status(200).json(product)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
 
 module.exports = router
