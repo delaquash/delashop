@@ -30,14 +30,14 @@ router.put('/:id', verifyTokenAdmin, async(req, res) => {
     }
 })
 
-// router.delete('/:id', verifyTokenAdmin, async(req, res)=> {
-//     try {
-//         await Order.findByIdAndDelete(req.params.id)
-//         res.status(200).json("Order has been deleted successfully.....")
-//     } catch (error) {
-//         res.status(500).json(error)
-//     }
-// });
+router.delete('/:id', verifyTokenAdmin, async(req, res)=> {
+    try {
+        await Order.findByIdAndDelete(req.params.id)
+        res.status(200).json("Order has been deleted successfully.....")
+    } catch (error) {
+        res.status(500).json(error)
+    }
+});
 
 // router.get('/find/:userId', verifyTokenAuthorization, async(req, res)=> {
 //     try {
