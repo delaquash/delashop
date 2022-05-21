@@ -50,7 +50,7 @@ router.get('/find/:id', async(req, res) => {
 })
 
 /* Getting the products from the database. */
-router.get('/', async(req, res) => {
+router.get('/', verifyToken, async(req, res) => {
     const qNew = req.params.new;
     const qCategory = req.params.category;
     try {

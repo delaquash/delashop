@@ -5,6 +5,7 @@ const user = require('./routes/user')
 const dotenv = require("dotenv")
 const authRouter = require('./routes/auth');
 const productRouter = require('./routes/product');
+const cartRouter = require('./routes/cart')
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use(express.json())
 app.use('/api/user', user);
 app.use('/api/auth', authRouter);
 app.use('/api/products', productRouter);
+app.use('/api/carts', cartRouter)
 
 app.listen(process.env.PORT  || 5000, () => {
     console.log('Backend Server is actively running!');
