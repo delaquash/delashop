@@ -1,7 +1,7 @@
 const router= require('express').Router();
 const Product = require('../models/Products');
 const { verifyToken, verifyTokenAuthorization, verifyTokenAdmin } = require('./verifyToken');
-const CryptoJS = require("crypto-js");
+
 
 
 /* This is a post request to the server. It is creating a new product. */
