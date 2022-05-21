@@ -30,14 +30,14 @@ router.put('/:id', verifyTokenAuthorization,async(req, res) => {
     }
 })
 
-// router.delete('/:id', verifyTokenAuthorization, async(req, res)=> {
-//     try {
-//         await Cart.findByIdAndDelete(req.params.id)
-//         res.status(200).json("Cart has been deleted successfully.....")
-//     } catch (error) {
-//         res.status(500).json(error)
-//     }
-// });
+router.delete('/:id', verifyTokenAuthorization, async(req, res)=> {
+    try {
+        await Cart.findByIdAndDelete(req.params.id)
+        res.status(200).json("Cart has been deleted successfully.....")
+    } catch (error) {
+        res.status(500).json(error)
+    }
+});
 
 // router.get('/find/:userId', verifyTokenAuthorization, async(req, res)=> {
 //     try {
