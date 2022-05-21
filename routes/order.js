@@ -39,14 +39,14 @@ router.delete('/:id', verifyTokenAdmin, async(req, res)=> {
     }
 });
 
-// router.get('/find/:userId', verifyTokenAuthorization, async(req, res)=> {
-//     try {
-//         const cart = await Cart.findOne({userId: req.params.userId});
-//         res.status(200).json(cart)
-//     } catch (error) {
-//         res.status(500).json(error)
-//     }
-// })
+router.get('/find/:userId', verifyTokenAuthorization, async(req, res)=> {
+    try {
+        const orders = await Order.find({userId: req.params.userId});
+        res.status(200).json(orders)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
 
 // router.get('/', verifyTokenAdmin, async(req, res)=> {
 //     try {
