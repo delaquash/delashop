@@ -17,6 +17,7 @@
     "flutterwave-node-v3": "^1.0.9",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.3",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "open": "^8.4.0"
   }
 }
