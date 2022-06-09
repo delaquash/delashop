@@ -47,8 +47,6 @@ router.post('/chargeCard', async (req, res) => {
             }
             res.status(201).json(response)
             console.log(response)
-    
-    
         } catch (error) {
             res.status(500).json(error)
         }
