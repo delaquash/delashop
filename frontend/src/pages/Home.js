@@ -3,8 +3,10 @@ import Navbar from '../components/Navbar';
 
 const Home = () => {
   return (
-    <div><Navbar /></div>
+    <div>
+        <Navbar />
+    </div>
   )
 }
 
-export default Home
+export default Home;
