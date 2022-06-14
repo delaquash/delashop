@@ -6,7 +6,6 @@ export const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
-  
 `;
 
 export const Arrow = styled.div`
