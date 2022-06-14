@@ -1178,7 +1178,7 @@
     "sift" "16.0.0"
 
 "morx@0.0.5":
-  "integrity" "sha1-3Ho3xD69y7MFb7bptk+aSGO838k="
+  "integrity" "sha512-ycmxw7POulpjY6dZJVopfmplN7Y7plHmJQL9Gi6OCdEvjLO63rnHsGzFmoUFdz1P63ugXGW59oTRLugBr+Xv6Q=="
   "resolved" "https://registry.npmjs.org/morx/-/morx-0.0.5.tgz"
   "version" "0.0.5"
   dependencies:
@@ -1186,7 +1186,7 @@
     "validator" "5.7.0"
 
 "mosc@1.0.0":
-  "integrity" "sha1-RhPagzJwuy7uu/EaeaDPjCcMnC0="
+  "integrity" "sha512-TU/EJbvYy4ICjJSaVxHPKy6KT7IrqzP+xDFLK67+eZCgt/0z4ZcSnpiPJzDXK1jpuwa+LMqsItJluzDPLJ9e/w=="
   "resolved" "https://registry.npmjs.org/mosc/-/mosc-1.0.0.tgz"
   "version" "1.0.0"
 
@@ -1782,7 +1782,7 @@
   "version" "3.4.0"
 
 "validator@5.7.0":
-  "integrity" "sha1-eoelgUa2laxIYHEUHAxJ1n2gXlw="
+  "integrity" "sha512-kHes0AATXms5NVgbJ4aDELR91O7+X+cxAS9d6I2z49MBhcAw6DYW4UCI8qv9NkL4+Mgx8jklt7gkCht+UHaZ+g=="
   "resolved" "https://registry.npmjs.org/validator/-/validator-5.7.0.tgz"
   "version" "5.7.0"
 
