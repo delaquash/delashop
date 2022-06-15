@@ -12,7 +12,7 @@ const Slider = () => {
         <Wrapper>
            <Slide>
            <ImgContainer>
-                <Image src="https://images.unsplash.com/photo-1654878543861-36e3d79c00b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1828&q=80" />
+                <Image src="https://media.istockphoto.com/photos/white-tshirt-clothes-picture-id685710150?k=20&m=685710150&s=612x612&w=0&h=JY6IbMc3Ij-Bkn3jLJW4GnA9k_Cc2fdAopSq6RB5o2E=" />
                 </ImgContainer>
             <InfoContainer>
 
