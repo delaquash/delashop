@@ -1,14 +1,16 @@
-import { styled } from '@material-ui/core'
-import React from 'react'
-import { Container } from '../styles/Category';
+import { Container, Info, Image, Title, Button } from '../styles/CategoryItem';
 
 
 const CategoryItem = ({item}) => {
   return (
     <Container>
-        <h1>Hello</h1>
+        <Image src={item.img} />
+        <Info>
+            <Title>{item.title}</Title>
+            <Button>SHOPW NOW</Button>
+        </Info>
     </Container>
   )
 }
 
-export default CategoryItem
+export default CategoryItem;
