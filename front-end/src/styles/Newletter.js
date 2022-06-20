@@ -34,4 +34,9 @@ export const Input =styled.input`
     flex: 8;
     padding-left: 20px;
 `;
-export const Button =styled.button``;
+export const Button =styled.button`
+    flex: 1;
+    border: none;
+    background-color: teal;
+    color: white;
+`;
