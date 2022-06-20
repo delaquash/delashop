@@ -1,16 +1,20 @@
-import { popularProducts } from "../data"
-import { Container } from "../styles/Products"
-import Product from "./Product"
+import { popularProducts } from "../data";
+import { Container } from "../styles/Products";
+import Product from "./Product";
 
 
 const Products = () => {
+    
   return (
     <Container>
         {popularProducts.map((item) => (
-            <Product item={item}  key={item.id}/>
+            <Product 
+                item={item}
+                key={item.id} 
+            />
         ))}
-    </Container>
+    </Container>  
   )
 }
 
-export default Products
+export default Products;

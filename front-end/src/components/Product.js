@@ -1,10 +1,26 @@
+import { FavoriteBorderOutlined, ShoppingCartOutlined, SearchOutlined } from "@material-ui/icons"
+import { Container, Icon, Info, Circle, Image } from "../styles/Product";
 
-import React from 'react'
-
-const Product = () => {
+const Product = ({item}) => {
   return (
-    <div>Product</div>
+    <Container> 
+        <Circle />
+        <Image 
+            src={item.img}
+        />
+        <Info>
+            <Icon>
+                <ShoppingCartOutlined />
+            </Icon>
+            <Icon>
+                <SearchOutlined />
+            </Icon>
+            <Icon>
+                <FavoriteBorderOutlined />
+            </Icon>
+        </Info>
+    </Container>
   )
 }
 
-export default Product
+export default Product;
