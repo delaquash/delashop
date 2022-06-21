@@ -6,7 +6,8 @@ const Footer = () => {
     <Container>
         <Left>
             <Logo>DELASHOP</Logo>
-            <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            <Desc>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Magnam architecto explicabo reiciendis minima deleniti ullam quod modi! 
                 Aspernatur quis, consequatur delectus expedita maxime, quos perferendis officia fugit minus, vero quae.
            </Desc>
