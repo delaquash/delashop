@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
+  padding-left: 40px;
 `;
 
 export const Left = styled.div`
@@ -12,7 +13,7 @@ export const Left = styled.div`
 `;
 
 export const Logo = styled.h1`
-  
+   font-style:  ;
 `;
 
 export const Desc = styled.p`
@@ -55,6 +56,12 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   width: 50%;
   margin-bottom: 10px;
+`;
+export const FooterIcon = styled.span `
+    margin: 3px;
+`
+export const FooterSpace = styled.span`
+    padding-left: 6px;
 `;
 
 export const Right = styled.div`

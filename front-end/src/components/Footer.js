@@ -1,5 +1,5 @@
-import { Facebook, Instagram, Twitter, YouTube } from '@material-ui/icons';
-import { Container, Logo, Desc, SocialContainer, SocialIcon,Center, Title, List, ListItem, Right, ContactItem, Left } from '../styles/Footer';
+import { Facebook, Instagram, Twitter, YouTube,Call, AddLocation, Mail, Payment } from '@material-ui/icons';
+import { Container, Logo, Desc, SocialContainer, SocialIcon,Center, Title, List, ListItem, Right, ContactItem, Left, FooterIcon, FooterSpace } from '../styles/Footer';
 
 
 const Footer = () => {
@@ -42,13 +42,29 @@ const Footer = () => {
             </List>
         </Center>
         <Right>
-          {/* <Title>Contact Us</Title>
+          <Title>Contact Us</Title>
           <ContactItem>
-            80, Alakija Close, Lekki, Lagos.
+              <AddLocation style={{ marginRight : "10px" }}/>
+              <FooterSpace>
+              80, Alakija Close, Lekki, Lagos.
+            </FooterSpace>
           </ContactItem>
           <ContactItem>
-            +2348065889756
-          </ContactItem> */}
+            <FooterIcon>
+              <Call style={{ marginRight : "10px" }} />                   
+            </FooterIcon>
+            <FooterSpace>
+              +2348064965574
+            </FooterSpace>
+          </ContactItem>
+          <ContactItem>
+              <Mail style={{ marginRight : "10px" }} /> 
+            <FooterSpace>
+              info@delashop.com.ng
+            </FooterSpace>
+          </ContactItem>
+
+          <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
         </Right>
     </Container>
   )
