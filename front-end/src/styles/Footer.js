@@ -13,7 +13,7 @@ export const Left = styled.div`
 `;
 
 export const Logo = styled.h1`
-   font-style:  ;
+   /* font-style:  ; */
 `;
 
 export const Desc = styled.p`

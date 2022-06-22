@@ -1,13 +1,15 @@
 // import  Announcement  from './components/Announcement';
 import './App.css';
-import Home from './pages/Home';
+// import Home from './pages/Home';
+import ProductList from './pages/ProductList';
 
 
 function App() {
   return (
     <div className="App">
       {/* <Announcement /> */}
-      <Home />
+      <ProductList />
+      {/* <Home /> */}
     </div>
   );
 }
