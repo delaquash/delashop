@@ -13,22 +13,43 @@ const Footer = () => {
                 Aspernatur quis, consequatur delectus expedita maxime, quos perferendis officia fugit minus, vero quae.
            </Desc>
            <SocialContainer>
-            <SocialIcon>
+            <SocialIcon color='385999'>
               <Facebook />
             </SocialIcon>
-            <SocialIcon>
+            <SocialIcon color='E4405F'>
               <Twitter />
             </SocialIcon>
-            <SocialIcon>
+            <SocialIcon color='555ACE'>
               <Instagram />
             </SocialIcon>
-            <SocialIcon>
+            <SocialIcon color="c4302b" >
               <YouTube />
             </SocialIcon>
            </SocialContainer>
         </Left>
-        <Center></Center>
-        <Right></Right>
+        <Center>
+            <Title>Useful Link.</Title>
+            <List>
+              <ListItem>Home</ListItem>
+              <ListItem>Cart</ListItem>
+              <ListItem>Man Fashion</ListItem>
+              <ListItem>Woman Fashion</ListItem>
+              <ListItem>Accessories</ListItem>
+              <ListItem>Cargo Tracking</ListItem>
+              <ListItem>My Account</ListItem>
+              <ListItem>Wishlist</ListItem>
+              <ListItem>Terms and Condition</ListItem>
+            </List>
+        </Center>
+        <Right>
+          {/* <Title>Contact Us</Title>
+          <ContactItem>
+            80, Alakija Close, Lekki, Lagos.
+          </ContactItem>
+          <ContactItem>
+            +2348065889756
+          </ContactItem> */}
+        </Right>
     </Container>
   )
 }
