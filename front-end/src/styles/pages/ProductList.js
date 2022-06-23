@@ -11,3 +11,8 @@ export const FilterContainer = styled.div`
 export const Filter = styled.div`
     margin: 20px;
 `;
+
+export const FilterText = styled.span`
+    font-size: 20px;
+    font-weight: 600;
+`;
