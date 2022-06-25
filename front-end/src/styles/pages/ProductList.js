@@ -15,4 +15,11 @@ export const Filter = styled.div`
 export const FilterText = styled.span`
     font-size: 20px;
     font-weight: 600;
+    margin-right: 20px;
 `;
+
+export const Select = styled.select`
+    padding: 10px;
+    margin-right: 20px;
+`;
+export const Option = styled.option``;
