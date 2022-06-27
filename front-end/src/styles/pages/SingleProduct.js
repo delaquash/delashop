@@ -28,5 +28,12 @@ export const Desc = styled.p`
 `;
 export const InfoContainer = styled.div`
     flex: 1;
-    padding: 0px 5px;
+    padding: 0px 50px;
 `;
+
+export const FilterContainer = styled.div``;
+export const FilterColor = styled.div``;
+export const Filter= styled.div``;
+export const FilterTitle= styled.span``;
+export const FilterSize = styled.div``;
+export const FilterSizeOption = styled.div``;
