@@ -31,9 +31,66 @@ export const InfoContainer = styled.div`
     padding: 0px 50px;
 `;
 
-export const FilterContainer = styled.div``;
-export const FilterColor = styled.div``;
-export const Filter= styled.div``;
-export const FilterTitle= styled.span``;
-export const FilterSize = styled.div``;
-export const FilterSizeOption = styled.div``;
+export const FilterContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 30px 0px;
+`;
+export const FilterColor = styled.div`
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: ${props=> props.color};
+    margin: 0px 5px;
+    cursor: pointer;
+`;
+export const Filter= styled.div`
+    display: flex;
+    align-items: center;
+`;
+export const FilterTitle= styled.span`
+    font-size: 20px;
+    font-weight: 200;
+`;
+export const FilterSize = styled.select`
+     margin-left: 20px;
+     padding: 10px;
+`; 
+export const FilterSizeOption = styled.option``;
+
+export const AddContainer = styled.div` 
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-between;
+`;
+export const AmountContainer = styled.div`
+     display: flex;
+     align-items: center;
+     font-weight: 700;
+`;
+export const Amount = styled.span`
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid teal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 5px;
+`;
+export const Button = styled.button`
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: #fff;
+    font-weight: 200;
+
+    &:hover {
+        background-color: red;
+        color: black;
+
+    }
+`;

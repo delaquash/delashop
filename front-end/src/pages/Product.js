@@ -2,8 +2,10 @@ import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newletter from "../components/Newletter";
+import Add from '../components/Add';
+import Remove from '../components/Remove';
 
-import { Container, Wrapper, ImageContainer, Image, InfoContainer, Title,Desc, Price, FilterSize, FilterContainer, FilterSizeOption, FilterTitle, FilterColor, Filter } from "../styles/pages/SingleProduct";
+import { Container, Wrapper, ImageContainer, Image, InfoContainer, Title,Desc, Price, FilterSize, FilterContainer, FilterSizeOption, FilterTitle, FilterColor, Filter, AddContainer, AmountContainer, Amount, Button } from "../styles/pages/SingleProduct";
 
 const Product = () => {
   return (
@@ -12,7 +14,7 @@ const Product = () => {
        <Announcement />
        <Wrapper>
         <ImageContainer>
-          <Image src="https://i.ibb.co/S6qMwr/jean.jpg" />
+          <Image src="https://i.ibb.co/S6qMwr/jean.png" />
         </ImageContainer>
         <InfoContainer>
           <Title>Agbada Full Pieces</Title>
@@ -38,6 +40,14 @@ const Product = () => {
               </FilterSize>
             </Filter>
           </FilterContainer>
+          <AddContainer>
+            <AmountContainer>
+              <Remove />
+              <Amount>1</Amount>
+              <Add />
+            </AmountContainer>
+            <Button>ADD TO CART</Button>
+          </AddContainer>
         </InfoContainer>
        </Wrapper>
        <Newletter />
