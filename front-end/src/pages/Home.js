@@ -1,11 +1,4 @@
-import React from 'react';
-import Announcement from '../components/Announcement';
-import Categories from '../components/Categories';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-import Newletter from '../components/Newletter';
-import Products from '../components/Products';
-import Slider from '../components/Slider';
+import { Announcement, Footer, Navbar, Newletter, Slider, Products, Categories }  from '../index.jsx';
 
 const Home = () => {
   return (

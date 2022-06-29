@@ -1,5 +1,5 @@
 import { popularProducts } from "../data";
-import { Container } from "../styles/Products";
+import { Container } from "../styles/Components/Products";
 import Product from "./Product";
 
 

@@ -1,4 +1,4 @@
-import { Background } from "../styles/Announcement"
+import { Background } from "../styles/Components/Announcement"
 
 const Announcement = () => {
   return (

@@ -87,10 +87,11 @@ export const Button = styled.button`
     cursor: pointer;
     background-color: #fff;
     font-weight: 200;
+    cursor: pointer;
 
     &:hover {
         background-color: red;
-        color: black;
+        color: white;
 
     }
 `;

@@ -1,8 +1,4 @@
-import Announcement from '../components/Announcement';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-import Newletter from '../components/Newletter';
-import Products from '../components/Products';
+import { Announcement, Footer, Navbar, Newletter, Products }  from '../index.jsx';
 import { Container, Title, FilterContainer, Filter, FilterText, Select, Option } from '../styles/pages/ProductList';
 
 const ProductList = () => {

@@ -1,6 +1,6 @@
 
 import { categories } from "../data";
-import { Container } from "../styles/Categories";
+import { Container } from "../styles/Components/Categories";
 import  CategoryItem  from "./CategoryItem";
 
 const Categories = () => {

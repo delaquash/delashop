@@ -1,10 +1,4 @@
-import Announcement from "../components/Announcement";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import Newletter from "../components/Newletter";
-import Add from '../components/Add';
-import Remove from '../components/Remove';
-
+import { Announcement, Footer, Navbar, Newletter, Add, Remove }  from '../index.jsx';
 import { Container, Wrapper, ImageContainer, Image, InfoContainer, Title,Desc, Price, FilterSize, FilterContainer, FilterSizeOption, FilterTitle, FilterColor, Filter, AddContainer, AmountContainer, Amount, Button } from "../styles/pages/SingleProduct";
 
 const Product = () => {
@@ -43,7 +37,7 @@ const Product = () => {
           <AddContainer>
             <AmountContainer>
               <Remove />
-              <Amount>1</Amount>
+              <Amount>20000</Amount>
               <Add />
             </AmountContainer>
             <Button>ADD TO CART</Button>

@@ -1,5 +1,5 @@
 import { Send } from "@material-ui/icons"
-import { Container, Title, Description, InputContainer, Input, Button } from "../styles/Newletter";
+import { Container, Title, Description, InputContainer, Input, Button } from "../styles/Components/Newletter";
 
 
 const Newletter = () => {

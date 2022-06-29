@@ -1,4 +1,4 @@
-import { Container, Info, Image, Title, Button } from '../styles/CategoryItem';
+import { Container, Info, Image, Title, Button } from '../styles/Components/CategoryItem';
 
 
 const CategoryItem = ({item}) => {

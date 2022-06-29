@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Twitter, YouTube,Call, AddLocation, Mail, Payment } from '@material-ui/icons';
-import { Container, Logo, Desc, SocialContainer, SocialIcon,Center, Title, List, ListItem, Right, ContactItem, Left, FooterIcon, FooterSpace } from '../styles/Footer';
+import { Container, Logo, Desc, SocialContainer, SocialIcon,Center, Title, List, ListItem, Right, ContactItem, Left, FooterIcon, FooterSpace } from '../styles/Components/Footer';
 
 
 const Footer = () => {
