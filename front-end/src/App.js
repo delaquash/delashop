@@ -1,5 +1,8 @@
 // import  Announcement  from './components/Announcement';
-import { Register } from './index.jsx';
+import { 
+  // Register
+  Login
+} from './index.jsx';
 import './App.css';
 // import Product from './pages/Product';
 // import Home from './pages/Home';
@@ -13,7 +16,8 @@ function App() {
       {/* <ProductList /> */}
       {/* <Home /> */}
       {/* <Product /> */}
-      <Register />
+      {/* <Register /> */}
+      <Login />
     </div>
   );
 }

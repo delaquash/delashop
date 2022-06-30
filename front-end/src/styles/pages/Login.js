@@ -1,23 +1,20 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(
+    background: 
+    /* linear-gradient(
         (255, 255, 255, 0.2),
         (255, 255, 255, 0.2)
-    );
-    background-image:url('https://images.pexels.com/photos/128299/pexels-photo-128299.jpeg?cs=srgb&dl=pexels-mabel-amber-128299.jpg&fm=jpg');
+    ), */
+    url('https://images.pexels.com/photos/128299/pexels-photo-128299.jpeg?cs=srgb&dl=pexels-mabel-amber-128299.jpg&fm=jpg');
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
     display: flex;
     align-items: center;
     justify-content: center; 
-    background: linear-gradient(
-        (255, 255, 255, 0.2),
-        (255, 255, 255, 0.2)
-    );
 `;
 export const Title = styled.h1`
     font-size: 24px;
@@ -51,7 +48,7 @@ export const Button = styled.button`
     width: 30%;
     border: none;
     border-radius: 10px;
-    /* margin-top: 10px; */
+    margin-top: 10px;
     padding: 15px 20px;
     color: white;
     background-color: black;
@@ -63,5 +60,8 @@ export const Button = styled.button`
         font-size: 15px;
         font-weight: 500;
     }
+`;
+
+export const Link = styled.link`
 
 `;
