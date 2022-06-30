@@ -11,21 +11,26 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center; 
 `;
+
 export const Title = styled.h1`
-    font-size: 24px;
+    margin-bottom: 10px;
+    font-size: 34px;
     font-weight: 300;
     display: flex;
     justify-content: center;
 `;
+
 export const Wrapper  = styled.div`
     width: 25%;
     padding: 50px;
     background-color: #fff;
 `;
+
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
 `;
+
 export const Input = styled.input`
     flex: 1;
     min-width: 40%;
@@ -34,11 +39,13 @@ export const Input = styled.input`
     margin:10px 0px;
     padding: 10px;
 `;
+
 export const Agreement = styled.span`
     font-size: 18px;
     font-weight: 500;
     margin: 20px 0px;
 `;
+
 export const Button = styled.button`
     /* width: 30%; */
     border: none;

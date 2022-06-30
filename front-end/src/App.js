@@ -1,12 +1,15 @@
 // import  Announcement  from './components/Announcement';
 import { 
   // Register
-  Login
+  // Home
+  // Product
+  // ProductList 
+  // Announcement 
+  Cart
+  // Login
 } from './index.jsx';
 import './App.css';
-// import Product from './pages/Product';
-// import Home from './pages/Home';
-// import ProductList from './pages/ProductList';
+
 
 
 function App() {
@@ -17,7 +20,8 @@ function App() {
       {/* <Home /> */}
       {/* <Product /> */}
       {/* <Register /> */}
-      <Login />
+      {/* <Login /> */}
+      <Cart />
     </div>
   );
 }
