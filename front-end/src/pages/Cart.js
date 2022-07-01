@@ -1,11 +1,6 @@
-import styled from 'styled-components';
 import { Announcement, Navbar, Footer } from '../index.jsx';
+import {Container, Wrapper, Title, Top, Bottom, TopButton, TopTextParent, TopText } from '../styles/pages/Cart';
 
-const Container = styled.div``;
-const Wrapper = styled.span``;
-const Title = styled.h1``;
-const Top = styled.div``;
-const Bottom = styled.div``;
 
 const Cart = () => {
   return (
@@ -14,7 +9,14 @@ const Cart = () => {
         <Announcement />
         <Wrapper>
             <Title>Your 3 Piece Suits</Title>
-            <Top></Top>
+            <Top>
+                <TopButton>Continue Shopping</TopButton>
+                <TopTextParent>
+                    <TopText>Shopping Cart(2)</TopText>
+                    <TopText>Your Wishlist(0)</TopText>
+                </TopTextParent>
+                <TopButton type='filled'>Checkout</TopButton>
+            </Top>
             <Bottom></Bottom>
         </Wrapper>
         <Footer />
