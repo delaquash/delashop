@@ -14,5 +14,6 @@ export { default as Home } from './pages/Home';
 export { default as Login } from './pages/Login';
 export { default as Register } from './pages/Register';
 export { default as Cart } from './pages/Cart';
+export { default as ProductColor } from './pages/ProductColor';
 
 
