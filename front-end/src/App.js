@@ -1,10 +1,10 @@
 import { 
   // Register
-  // Home
+  Home
   // Product
   // ProductList 
   // Announcement 
-  Cart
+  // Cart
   // Login
 } from './index.jsx';
 import './App.css';
@@ -16,11 +16,11 @@ function App() {
     <div className="App">
       {/* <Announcement /> */}
       {/* <ProductList /> */}
-      {/* <Home /> */}
+      <Home />
       {/* <Product /> */}
       {/* <Register /> */}
       {/* <Login /> */}
-      <Cart />
+      {/* <Cart /> */}
     </div>
   );
 }

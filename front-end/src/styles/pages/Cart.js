@@ -50,9 +50,7 @@ export const Bottom = styled.div`
 export const Info = styled.div`
     flex: 3;
 `;
-export const Summary = styled.div`
-    flex: 1;
-`;
+
 
 export const TopText = styled.span`
     font-size: 20px;
@@ -101,3 +99,41 @@ export const ProductName = styled.span`
 `;
 export const ProductSize = styled.span ``;
 export const ProductId = styled.span ``;
+
+export const Hr = styled.hr`
+    background-color: #fff;
+    border: none;
+    height: 1px;
+`;
+
+export const Summary = styled.div`
+    flex: 1;
+    border:1px solid #40E0D0;
+    border-radius: 10px;
+    padding: 20px;
+    height: 30vh;
+`;
+export const SummaryTitle = styled.div`
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-style: italic;
+`;
+export const SummaryItem = styled.div`
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: ${(props => props.type === "total" && "500")};
+    font-size: ${(props => props.type === "total" && "24px")};
+`;
+export const SummaryItemText = styled.div``;
+export const SummaryItemPrice = styled.div``;
+export const Button = styled.button`
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #f4f4f4;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+`;
