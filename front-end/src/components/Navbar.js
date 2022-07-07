@@ -1,6 +1,7 @@
 import { Search,  } from '@material-ui/icons';
 import  ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import { Badge } from '@mui/material';
+
 import  { Container, Wrapper, Language, SearchContainer, Input, Left, Center, Logo, Right, MenuItem } from '../styles/Components/Navbar';
 
 

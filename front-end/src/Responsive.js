@@ -1,23 +1,23 @@
 import { css } from "styled-components";
 
-export const mobile =(props) => {
+export const mobileView =(props) => {
     return css `
-        @media only screen and (min-width: 320px ){
+        @media only screen and (max-width: 320px), only screen and (min-width: 768px){
             ${props}
         }
     `
 }
 
-export const tabletIpad = (props)=> {
+export const tabletIpadView = (props)=> {
     return css `
-    @media only screen and (min-width: 768px) {
+    @media only screen and (max-width: 768px) {
         ${props}
     }`
 }
 
-export const web = (props)=> {
+export const webView = (props)=> {
     return css`
-        @media only screen and (min-width: 1024px) {
+        @media only screen and (max-width: 1024px) {
             ${props}
         }
     `

@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Twitter, YouTube,Call, AddLocation, Mail, Payment } from '@material-ui/icons';
-import { Container, Logo, Desc, SocialContainer, SocialIcon,Center, Title, List, ListItem, Right, ContactItem, Left, FooterIcon, FooterSpace } from '../styles/Components/Footer';
+import { Container, Logo, Desc, Copyright, SocialContainer, SocialIcon,Center, Title, List, ListItem, Right, ContactItem, Left, FooterIcon, FooterSpace } from '../styles/Components/Footer';
 
 
 const Footer = () => {
@@ -40,6 +40,9 @@ const Footer = () => {
               <ListItem>Wishlist</ListItem>
               <ListItem>Terms and Condition</ListItem>
             </List>
+            <Copyright>
+          Delashop 2022. Built with React
+            </Copyright>
         </Center>
         <Right>
           <Title>Contact Us</Title>
@@ -66,6 +69,7 @@ const Footer = () => {
 
           <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
         </Right>
+        
     </Container>
   )
 }

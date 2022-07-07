@@ -1,6 +1,10 @@
 import styled from 'styled-components';
+import { mobileView } from '../../Responsive';
 export const Container = styled.div`
     height: 60px;
+    ${mobileView({
+        backgroundColor: "red"
+    })}
 `;
 
  export const Wrapper = styled.div`

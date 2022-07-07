@@ -11,6 +11,11 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center; 
 `;
+export const I = styled.i`
+    position: absolute;
+    top: 47%;
+    right: 38%;
+  `;
 
 export const Title = styled.h1`
     margin-bottom: 10px;
@@ -77,3 +82,5 @@ export const Link = styled.a`
     justify-content: center;
     cursor: pointer;
 `;
+
+

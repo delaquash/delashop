@@ -74,3 +74,8 @@ export const ContactItem = styled.div`
   display: flex;
   align-items: center;
 `;
+export const Copyright = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
