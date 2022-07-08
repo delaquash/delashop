@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 import { mobileView } from '../../Responsive';
+
+export const sticky = styled.div``;
+
 export const Container = styled.div`
     height: 60px;
+    
     ${mobileView({
-        backgroundColor: "red"
+        // backgroundColor: "red"
     })}
 `;
 
@@ -16,6 +20,7 @@ export const Container = styled.div`
  export const Language= styled.span`
     font-size: 14px;
     cursor: pointer;
+    border: 1px solid gray;
 `;
 export const SearchContainer = styled.div`
     border: 1px solid lightgray;
@@ -35,9 +40,11 @@ export const Left = styled.div`
 `;
 export const Right = styled.div`
     flex: 1;
-    display: flex;
+    
+    
     align-items: center;
     justify-content: flex-end;
+    /* padding: 20px; */
 `;
 export const Center = styled.div`
     flex: 1;
@@ -45,9 +52,13 @@ export const Center = styled.div`
 `;
 
 export const MenuItem = styled.div`
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
-    margin-left: 125px;
+    margin-left: 50px;
+
+    &:hover {
+        border-bottom: 3px solid black;
+    }
 `;
 
 export const Logo = styled.h1`

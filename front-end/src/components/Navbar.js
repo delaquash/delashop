@@ -5,8 +5,10 @@ import { Badge } from '@mui/material';
 import  { Container, Wrapper, Language, SearchContainer, Input, Left, Center, Logo, Right, MenuItem } from '../styles/Components/Navbar';
 
 
-const Navbar = () => {
+const Navbar = ({scrolling}) => {
+    
   return (
+   
     <Container>
         <Wrapper>
             <Left>
@@ -21,10 +23,13 @@ const Navbar = () => {
             <Center><Logo>Delashop</Logo></Center>
             <Right>
                 <MenuItem>
+                    ABOUT US               
+                </MenuItem>
+                <MenuItem>
                     REGISTER                
                 </MenuItem>
                 <MenuItem>
-                    SIGN IN                
+                    LOGIN                
                 </MenuItem>
                 <MenuItem>
                 <Badge badgeContent={4} color="primary">
@@ -34,6 +39,7 @@ const Navbar = () => {
             </Right>
         </Wrapper>
     </Container>
+
   )
 };
 

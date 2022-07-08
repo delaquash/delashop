@@ -41,7 +41,7 @@ const Footer = () => {
               <ListItem>Terms and Condition</ListItem>
             </List>
             <Copyright>
-          Delashop 2022. Built with React
+          Delashop 	&copy;2022. Built with React
             </Copyright>
         </Center>
         <Right>
