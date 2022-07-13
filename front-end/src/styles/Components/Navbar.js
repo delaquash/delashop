@@ -40,11 +40,9 @@ export const Left = styled.div`
 `;
 export const Right = styled.div`
     flex: 1;
-    
-    
+    display: flex;
     align-items: center;
     justify-content: flex-end;
-    /* padding: 20px; */
 `;
 export const Center = styled.div`
     flex: 1;
@@ -52,15 +50,11 @@ export const Center = styled.div`
 `;
 
 export const MenuItem = styled.div`
-    font-size: 18px;
+    font-size: 14px;
     cursor: pointer;
     margin-left: 50px;
-
-    &:hover {
-        border-bottom: 3px solid black;
-    }
 `;
 
 export const Logo = styled.h1`
     font-weight: bold;
-`; 
+`;
