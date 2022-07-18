@@ -1,39 +1,38 @@
 
 import { 
-  // Register
-  Home
+  Register,
+  Home,
   // Product
   // ProductList 
-  // Announcement 
-  // Cart
-  // Login
+  Announcement, 
+  Cart,
+  Login
 } from './index.jsx';
 import {
-  BrowserRouter,
+  // BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
 import './App.css';
-
-
-
+import React from 'react';
 
 function App() {
   
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
       <Routes>
-        <div className="App">
-          <Route index element={<Home />}  />        
+          <Route path="/" element={<Home />} />      
+          {/* <Route path='Announcement' element={<Announcement />} /> */}
           {/* <Announcement /> */}
           {/* <ProductList /> */}
           {/* <Product /> */}
-          {/* <Register /> */}
-          {/* <Login /> */}
+          <Route path="/register" element={<Register />} />
+          <Route path="login" element={<Login />} />
+          <Route path='cart' element={<Cart />} />
           {/* <Cart /> */}
-      </div>   
+      {/* </div>    */}
       </Routes>   
-    </BrowserRouter>
+    // </BrowserRouter>
   );
 }
 
