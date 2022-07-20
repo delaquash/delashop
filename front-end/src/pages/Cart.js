@@ -1,4 +1,8 @@
-import { Announcement, Navbar, Footer} from '../index.jsx';
+// import { Announcement, Navbar, Footer} from '../index.jsx';
+import Navbar from '../components/Navbar';
+import Announcement from '../components/Announcement';
+import Footer from '../components/Footer';
+import { Add, Remove } from "@material-ui/icons";
 import {Container, Hr, Wrapper, Title, 
         Top,ProductColor, Bottom, TopButton, 
         Image, PriceDetails, ProductPrice, ProductId,
@@ -7,7 +11,7 @@ import {Container, Hr, Wrapper, Title,
         ProductAmountContainer, ProductAmount, SummaryTitle,
         SummaryItem, SummaryItemText, SummaryItemPrice, Button
     } from '../styles/pages/Cart';
-import { Add, Remove } from '@material-ui/icons'
+
 
 const Cart = () => {
   return (
@@ -102,4 +106,4 @@ const Cart = () => {
   )
 }
 
-export default Cart
+export default Cart;

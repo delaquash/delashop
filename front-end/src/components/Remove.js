@@ -1,9 +1,9 @@
 
 
-const Add = () => {
+const Remove = () => {
     return (
       <div>-</div>
     )
   }
   
-  export default Add
+  export default Remove;

@@ -1,38 +1,24 @@
 
-import { 
-  Register,
-  Home,
-  // Product
-  // ProductList 
-  Announcement, 
-  Cart,
-  Login
-} from './index.jsx';
-import {
-  // BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Product from "./pages/Product";
+import ProductList from "./pages/ProductList";
+
 import './App.css';
-import React from 'react';
 
 function App() {
-  
   return (
-    // <BrowserRouter>
-      <Routes>
+      <Routes> 
           <Route path="/" element={<Home />} />      
-          {/* <Route path='Announcement' element={<Announcement />} /> */}
-          {/* <Announcement /> */}
-          {/* <ProductList /> */}
-          {/* <Product /> */}
+          <Route path='/products/:category' element={<ProductList />}  />
+          <Route path="/product/:id" element={<Product />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="login" element={<Login />} />
-          <Route path='cart' element={<Cart />} />
-          {/* <Cart /> */}
-      {/* </div>    */}
       </Routes>   
-    // </BrowserRouter>
   );
 }
 
