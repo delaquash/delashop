@@ -5,7 +5,7 @@ import { Badge } from '@mui/material';
 import  { Container, Wrapper, Language, SearchContainer, Input, Left, Center, Logo, Right, MenuItem } from '../styles/Components/Navbar';
 
 
-const Navbar = ({scrolling}) => {
+const Navbar = () => {
     
   return (
    

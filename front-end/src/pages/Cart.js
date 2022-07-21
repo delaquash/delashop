@@ -1,8 +1,8 @@
 // import { Announcement, Navbar, Footer} from '../index.jsx';
+import { Add, Remove } from "@material-ui/icons";
 import Navbar from '../components/Navbar';
 import Announcement from '../components/Announcement';
 import Footer from '../components/Footer';
-import { Add, Remove } from "@material-ui/icons";
 import {Container, Hr, Wrapper, Title, 
         Top,ProductColor, Bottom, TopButton, 
         Image, PriceDetails, ProductPrice, ProductId,
