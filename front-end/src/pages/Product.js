@@ -1,4 +1,9 @@
-import { Announcement, Footer, Navbar, Newletter, Add, Remove }  from '../index.jsx';
+import Announcement from '../components/Announcement.js';
+import Footer from '../components/Footer.js';
+import Navbar from '../components/Navbar.js';
+import Newletter from '../components/Newletter.js';
+import Add from '../components/Add.js';
+import Remove from '../components/Remove.js';
 import { Container, Wrapper, ImageContainer, Image, InfoContainer, Title,Desc, Price, FilterSize, FilterContainer, FilterSizeOption, FilterTitle, FilterColor, Filter, AddContainer, AmountContainer, Amount, Button } from "../styles/pages/SingleProduct";
 
 const Product = () => {
