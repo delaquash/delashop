@@ -57,14 +57,14 @@ const ProductList = () => {
                 <FilterText>
                     Sort Product
                 </FilterText>
-                <Select>
-                    <Option selected>Newest</Option>
-                    <Option>Price(asc)</Option>
-                    <Option>Price (desc)</Option>
+                <Select onChange={(e)=> setSorts(e.target.value)}>
+                    <Option value="newest" >Newest</Option>
+                    <Option value="asc">Price(asc)</Option>
+                    <Option value="desc">Price (desc)</Option>
                 </Select>
             </Filter>
         </FilterContainer>
-        <Products />
+        <Products cat={cat} filters={filters} sorts={sorts}/>
         <Newletter />
         <Footer />
     </Container>

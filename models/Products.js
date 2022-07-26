@@ -28,11 +28,11 @@ const  mongoose  = require("mongoose");
         required: true,
      },
      inStock: {
-      type: Boolean,
-      required: true
-     }
+         type: Boolean,
+     required: true
+   }
    },
       {timestamps : true}
- )
+ );
 
- module.exports = mongoose.model("Product",ProductSchema)
+ module.exports = mongoose.model("Product", ProductSchema);

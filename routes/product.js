@@ -2,8 +2,6 @@ const router= require('express').Router();
 const Product = require('../models/Products');
 const { verifyToken, verifyTokenAuthorization, verifyTokenAdmin } = require('./verifyToken');
 
-
-
 /* This is a post request to the server. It is creating a new product. */
 router.post('/',verifyTokenAdmin, async (req, res) => {
         const newProduct = new Product(req.body);
@@ -23,9 +21,9 @@ router.put('/:id', verifyTokenAdmin, async (req, res) => {
         }, {
             new: true,
         })
-        res.status(200).json(updatedProduct)
+        res.status(200).json(updatedProduct);
     } catch (error) {
-      res.status(500).json(error)  
+      res.status(500).json(error);
     }
 })
 
@@ -64,7 +62,7 @@ router.get('/', verifyToken, async(req, res) => {
                 },
             })
         } else {
-            products = await Product.find()
+            products = await Product.find();
         }
         res.status(200).json(products)
     } catch (error) {

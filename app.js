@@ -1,5 +1,5 @@
 const express = require("express");
-const app= express();
+
 const  mongoose  = require("mongoose");
 const user = require('./routes/user')
 const dotenv = require("dotenv")
@@ -9,7 +9,7 @@ const cartRouter = require('./routes/cart')
 const orderRouter = require('./routes/order')
 const walletRouter = require('./routes/wallet')
 
-
+const app= express();
 dotenv.config();
 
 // DB Connection
