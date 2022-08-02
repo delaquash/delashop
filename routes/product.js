@@ -3,7 +3,7 @@ const Product = require('../models/Products');
 const { verifyToken, verifyTokenAuthorization, verifyTokenAdmin } = require('./verifyToken');
 
 /* This is a post request to the server. It is creating a new product. */
-router.post('/',verifyTokenAdmin, async (req, res) => {
+router.post('/', verifyTokenAdmin, async (req, res) => {
         const newProduct = new Product(req.body);
         try {
             const savedProduct = await newProduct.save();
@@ -33,22 +33,22 @@ router.delete('/:id', verifyTokenAdmin, async (req, res)=> {
         await Product.findByIdAndDelete(req.params.id);
         res.status(200).json("User has been deleted")
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).json(error);
     }
 })
 
 /* Getting the product by id. */
 router.get('/find/:id', async(req, res) => {
     try {
-        const product = await Product.find();
+        const product = await Product.findById(req.params.id);
         res.status(200).json(product)
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).json(error);
     }
 })
 
 /* Getting the products from the database. */
-router.get('/', verifyToken, async(req, res) => {
+router.get('/', async(req, res) => {
     const qNew = req.params.new;
     const qCategory = req.params.category;
     try {

@@ -13,10 +13,17 @@ const verifyToken =(req, res, next) => {
     if(authHeaders) {
         const token = authHeaders.split(' ')[1];
         jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-            if(err) res.status(403).json("Token is not valid");
-            console.log(err);
-            req.user = user
-            next()
+            // if(err) res.status(403).json("Token is not valid");
+            // console.log(err);
+            // req.user = user
+            // next()
+
+            if(err) { 
+                res.status(403).json('Token is not valid');
+            } else { 
+               req.user = user; 
+               next();
+            }
         });
     } else {
         res.status(401).json("You are not authenticated")
@@ -48,7 +55,7 @@ const verifyTokenAuthorization =(req, res, next)=> {
 const verifyTokenAdmin=(req, res, next) => {
     verifyToken(req, res, () => {
         if(req.user.isAdmin){
-            next()
+            next();
         } else {
             res.status(403).json('You are not allowed to do so')
         }

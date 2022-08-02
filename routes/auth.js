@@ -26,7 +26,11 @@ router.post('/login', async(req, res) => {
         // find the user
         const user = await User.findOne({username : req.body.username });
     // error message if user doesnt exist 
-        !user && res.status(401).json("Wrong credentials")
+        // !user && res.status(401).json("Wrong credentials");
+        if (!user) {
+            res.status(401).json("Wrong Credentials!");
+            return;
+          }
         /* Decrypting the password that was encrypted in the register route. */
         const hashedPassword = CryptoJS.AES.decrypt(user.password, process.env.PASS_SEC)
         const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
