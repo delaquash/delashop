@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { popularProducts } from "../data";
+// import { popularProducts } from "../data";
 import { Container } from "../styles/Components/Products";
 import Product from "./Product";
 
 const Products = ({cat, filters, sorts}) => {
     const [products, setProducts] = useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
-
 
         useEffect(() => {
           const getProducts = async ()=> {
@@ -42,15 +41,35 @@ const Products = ({cat, filters, sorts}) => {
         }, [products, cat, filters])
 
 
+        useEffect(() => {
+            if(sorts === "newest"){
+                setFilteredProducts((prev) => 
+                  /* Sorting the array by the date it was created. */
+                  [...prev].sort((a, b) => a.createdAt - b.createdAt)
+                )
+            } else if (sorts === 'asc'){
+              setFilteredProducts((prev) => {
+                  [...prev].sort((a, b) => a.price - b.price)
+              })
+            } else{
+              setFilteredProducts((prev) => {
+                [...prev].sort((a, b)=> b.createdAt - a.createdAt)
+              })
+            }
+        }, [sorts])
+
   return (
     <Container>
-        {filteredProducts.map((item) => (
-            <Product 
+        {cat ? filteredProducts.map((item) => 
+            <Product
                 item={item}
                 key={item.id} 
-            />
-        ))}
-    </Container>  
+            />) : products.slice(0, 8).map((item)=> 
+            <Product
+                item={item}
+                key={item.id} 
+            />)}
+    </Container>
   )
 }
 

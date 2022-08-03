@@ -13,6 +13,7 @@ const ProductList = () => {
     const cat = location.pathname.split('/')[2]
     const [filters, setFilters] = useState({})
     const [sorts, setSorts] = useState("newest");
+
     const handleOnchange= (e) => {
         const val = e.target.value;
         setFilters({
@@ -20,7 +21,6 @@ const ProductList = () => {
             [e.target.name]: val,
         })
     }
-    console.log(filters);
   return (
     <Container>
         <Navbar />
