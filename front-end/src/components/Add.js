@@ -1,9 +1,9 @@
-
+import { Button } from '../styles/Components/Button';
 
 const Add = () => {
     return (
-      <div>+</div>
+      <Button>+</Button>
     )
   }
   
-  export default Add
+  export default Add;
