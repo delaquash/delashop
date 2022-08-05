@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { Search,  } from '@material-ui/icons';
 import  ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import { Badge } from '@mui/material';
@@ -6,9 +7,9 @@ import  { Container, Wrapper, Language, SearchContainer, Input, Left, Center, Lo
 
 
 const Navbar = () => {
+    const quantity = useSelector(state=> state.cart.quantity)
     
   return (
-   
     <Container>
         <Wrapper>
             <Left>
@@ -32,7 +33,7 @@ const Navbar = () => {
                     LOGIN                
                 </MenuItem>
                 <MenuItem>
-                <Badge badgeContent={4} color="primary">
+                <Badge badgeContent={quantity} color="primary">
                     <ShoppingCartOutlinedIcon />
                 </Badge>               
                 </MenuItem>
