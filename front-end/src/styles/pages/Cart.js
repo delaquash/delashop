@@ -20,6 +20,7 @@ export const Top = styled.div`
 
 export const TopButton = styled.button`
         font-size: 20px;
+        margin-right: 3em;
         font-weight: 500;
         cursor: pointer;
         border: ${props=> props.type === "filled" && "none"};
@@ -112,6 +113,7 @@ export const Summary = styled.div`
     border-radius: 10px;
     padding: 20px;
     height: 30vh;
+    margin-right: 5em;
 `;
 export const SummaryTitle = styled.div`
     font-weight: 500;

@@ -8,11 +8,15 @@ import Newletter from '../components/Newletter.js';
 import { Container, Wrapper, ImageContainer, Image, InfoContainer, Title,Desc, Price, FilterSize, FilterContainer, FilterSizeOption, FilterTitle, FilterColor, Filter, AddContainer, AmountContainer, Amount, Button } from "../styles/pages/SingleProduct";
 import { useLocation } from 'react-router-dom';
 import { publicRequest } from '../RequestMethod.js';
-
+import { addProduct } from '../Redux/CartReducer.js';
+import { useDispatch } from 'react-redux';
 
 
 const Product = () => {
+  /* Getting the current location of the user. */
   const location = useLocation();
+  /* A hook that allows you to dispatch actions to the Redux store. */
+  const dispatch = useDispatch()
   /* Getting the id of the product from the url. */
   const id = location.pathname.split("/")[2]
   const [product, setProduct ] = useState({});
@@ -43,7 +47,8 @@ const Product = () => {
 
   const handleClick= () => {
     // update cart
-    
+    dispatch(addProduct({...product, quantity, color, size }))
+
   }
 
 
