@@ -15,19 +15,24 @@ router.post('/',verifyToken, async (req, res) => {
 
 router.put('/:id', verifyTokenAuthorization,async(req, res) => {
     try {
-        const updatedCart = await Cart.findByIdAndUpdate(
-            req.params.id,
-            {
-                $set: req.body
-            },
-            {
-                new: true
+        if (id.match(/^[0-9a-fA-F]{24}$/)) {
+                    // Yes, it's a valid ObjectId, proceed with `findById` call.
+                    const updatedCart = await Cart.findByIdAndUpdate(
+                    req.params._id,
+                    {
+                        $set: req.body
+                    },
+                    {
+                        new: true
+                    }
+                    
+        );res.status(200).json(updatedCart)
+                }
+                
             }
-        );
-        res.status(200).json(updatedCart)
-    } catch (error) {
-        res.status(500).json(error)
-    }
+    catch (error) {
+                res.status(500).json(error)
+        }      
 })
 
 router.delete('/:id', verifyTokenAuthorization, async(req, res)=> {
