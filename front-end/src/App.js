@@ -6,8 +6,6 @@ import Login from "./pages/Login";
 import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
 
-import './App.css';
-
 function App() {
   return (
       <Routes> 

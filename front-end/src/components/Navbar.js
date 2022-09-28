@@ -1,4 +1,3 @@
-
 import { useSelector } from 'react-redux';
 import { Search,  } from '@material-ui/icons';
 import  ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
@@ -22,7 +21,11 @@ const Navbar = () => {
                         <Search  style={{color: "gray", fontSize: "16px"}} />
                     </SearchContainer>      
             </Left>
-            <Center><Logo>Delashop</Logo></Center>
+            <Center>
+                <Logo>
+                    <Link to="/">Delashop</Link>
+                </Logo>
+            </Center>
             <Right>
                 <MenuItem>
                     ABOUT US               

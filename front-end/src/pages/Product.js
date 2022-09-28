@@ -36,14 +36,9 @@ const Product = () => {
     }
     getProducts()
   }, [id])
-  const handleQuantity = (type)=> {
-    if (type === "dec"){
-      setQuantity(quantity - 1)
-    } else {
-      setQuantity(quantity + 1)
-    }
-  }
 
+
+  const handleQuantity = (type) => type === "dec" ? quantity > 1 && setQuantity(quantity - 1) : setQuantity(quantity + 1)
   const handleClick= () => {
     // update cart
     dispatch(addProduct({...product, quantity, color, size }))

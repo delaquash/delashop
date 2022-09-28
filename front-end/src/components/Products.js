@@ -36,7 +36,6 @@ const Products = ({cat, filters, sorts}) => {
                   item[key] of the products array.
                   </code> */
                   Object.entries(filters).every(([key, value]) =>
-                  // console.log(filters)
                   item[key].includes(value)
                 ))
                 )
@@ -62,7 +61,7 @@ const Products = ({cat, filters, sorts}) => {
 
   return (
     <Container>
-        {cat ? filteredProducts.map((item) => 
+        {cat ? filteredProducts.map((item) =>  
             <Product
                 item={item}
                 key={item.id} 
@@ -71,6 +70,7 @@ const Products = ({cat, filters, sorts}) => {
                 item={item}
                 key={item.id} 
             />)}
+            console.log(item)
     </Container>
   )
 }
