@@ -32,7 +32,7 @@ const Cart = () => {
             </Top>
             <Bottom>
                 <Info>
-                    {cart.products?.map((product)=> (
+                    {cart.products.map((product)=> (
                             <Product marginBottom="0 0 30px 0">
                             <ProductDetails>
                                 <Image src='https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>

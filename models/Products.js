@@ -18,10 +18,10 @@ const  mongoose  = require("mongoose");
         required: true,
      },
      size: {
-        type: Array,
+        type: String,
      },
      color: {
-        type: Array,
+        type: String,
      },
      price: {
         type: Number,
@@ -29,7 +29,6 @@ const  mongoose  = require("mongoose");
      },
      inStock: {
          type: Boolean,
-     required: true
    }
    },
       {timestamps : true}

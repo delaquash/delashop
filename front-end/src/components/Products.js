@@ -36,8 +36,10 @@ const Products = ({cat, filters, sorts}) => {
                   item[key] of the products array.
                   </code> */
                   Object.entries(filters).every(([key, value]) =>
+                  // console.log(filters)
                   item[key].includes(value)
-                )))
+                ))
+                )
         }, [products, cat, filters])
 
 

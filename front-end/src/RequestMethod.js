@@ -5,7 +5,7 @@ const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODVjOTNkYzM5ZmU4
 
 export const publicRequest= axios.create({
     baseURL: BASE_URL,
-})
+});
 
 
 export const UserRequest = axios.create({

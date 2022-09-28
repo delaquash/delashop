@@ -16,27 +16,26 @@ const Product = () => {
   /* Getting the current location of the user. */
   const location = useLocation();
   /* A hook that allows you to dispatch actions to the Redux store. */
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+
   /* Getting the id of the product from the url. */
   const id = location.pathname.split("/")[2]
-  const [product, setProduct ] = useState({});
+  const [product, setProduct ] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [size, setSize]= useState("");
   const [ color, setColor ]= useState("")
 
-  useEffect(() => {
+  useEffect(() => {  
     const getProducts = async () => {
       try {
         const res = await publicRequest.get("/products/find/" + id)
         setProduct(res.data)
-        console.log(res);
       } catch (error) {
         
       }
     }
     getProducts()
   }, [id])
-  
   const handleQuantity = (type)=> {
     if (type === "dec"){
       setQuantity(quantity - 1)
@@ -48,9 +47,10 @@ const Product = () => {
   const handleClick= () => {
     // update cart
     dispatch(addProduct({...product, quantity, color, size }))
+  
 
   }
-
+// console.log({...product}, quantity, size, color)
 
   return (
     <Container>
@@ -67,22 +67,24 @@ const Product = () => {
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              {product.color?.map((c) => (
+              {Array.isArray(product) ? product.color?.map((c) => (
                 <FilterColor 
                     color={c} 
                     key={c} 
                     onClick={() => setColor(c)}
                 />
-              ))}
+              )): null}
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
               <FilterSize
-                  onChange={(e)=>setSize(e.target.value) }
+                  onChange={(e)=>setSize(e.target.value)}
               >
-                {product.size?.map((s)=> (
-                  <FilterSizeOption key={s}>{s}</FilterSizeOption>
-                ))}
+                {Array.isArray(product) ?product.size?.map((s)=> (
+                  <FilterSizeOption key={s}>
+                      {s}
+                  </FilterSizeOption>
+                )): null}
               </FilterSize>
             </Filter>
           </FilterContainer>
