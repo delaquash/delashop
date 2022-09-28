@@ -28,7 +28,7 @@ const Footer = () => {
            </SocialContainer>
         </Left>
         <Center>
-            <Title>Useful Link.</Title>
+            <Title>Links</Title>
             <List>
               <ListItem>Home</ListItem>
               <ListItem>Cart</ListItem>

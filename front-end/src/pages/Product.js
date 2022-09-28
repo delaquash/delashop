@@ -13,6 +13,7 @@ import { useDispatch } from 'react-redux';
 
 
 const Product = () => {
+  
   /* Getting the current location of the user. */
   const location = useLocation();
   /* A hook that allows you to dispatch actions to the Redux store. */
@@ -20,10 +21,11 @@ const Product = () => {
 
   /* Getting the id of the product from the url. */
   const id = location.pathname.split("/")[2]
-  const [product, setProduct ] = useState([]);
+  const [product, setProduct ] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [size, setSize]= useState("");
   const [ color, setColor ]= useState("")
+  const { title, desc, price} = product
 
   useEffect(() => {  
     const getProducts = async () => {
@@ -37,15 +39,11 @@ const Product = () => {
     getProducts()
   }, [id])
 
-
   const handleQuantity = (type) => type === "dec" ? quantity > 1 && setQuantity(quantity - 1) : setQuantity(quantity + 1)
   const handleClick= () => {
     // update cart
     dispatch(addProduct({...product, quantity, color, size }))
-  
-
   }
-// console.log({...product}, quantity, size, color)
 
   return (
     <Container>
@@ -56,30 +54,30 @@ const Product = () => {
           <Image src={product.img} />
         </ImageContainer>
         <InfoContainer>
-          <Title>{product.title}</Title>
-          <Desc> {product.desc}</Desc>
-          <Price>&#8358; 20000</Price>
+          <Title>{title}</Title>
+          <Desc> {desc}</Desc>
+          <Price>&#8358; {price}</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              {Array.isArray(product) ? product.color?.map((c) => (
-                <FilterColor 
-                    color={c} 
-                    key={c} 
-                    onClick={() => setColor(c)}
-                />
-              )): null}
+                {product.colors?.map((color)=> (
+                   <FilterColor 
+                      color={color}
+                      key={color}
+                      onClick={()=>setColor(color)}
+                    />
+                ))}
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
               <FilterSize
                   onChange={(e)=>setSize(e.target.value)}
               >
-                {Array.isArray(product) ?product.size?.map((s)=> (
-                  <FilterSizeOption key={s}>
-                      {s}
+                {product.sizes?.map((size)=> (
+                  <FilterSizeOption key={size}>
+                      {size}
                   </FilterSizeOption>
-                )): null}
+                ))}
               </FilterSize>
             </Filter>
           </FilterContainer>

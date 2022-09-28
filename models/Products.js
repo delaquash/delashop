@@ -17,11 +17,11 @@ const  mongoose  = require("mongoose");
         type: String,
         required: true,
      },
-     size: {
-        type: String,
+     sizes: {
+        type: Array,
      },
-     color: {
-        type: String,
+     colors: {
+        type: Array,
      },
      price: {
         type: Number,

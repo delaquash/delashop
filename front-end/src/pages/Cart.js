@@ -15,7 +15,8 @@ import {Container, Hr, Wrapper, Title,
 
 
 const Cart = () => {
-    const cart = useSelector(state=> state.cart)
+    const cart = useSelector(state=> state.cart);
+    console.log(cart)
   return (
     <Container>
         <Navbar />
@@ -32,12 +33,12 @@ const Cart = () => {
             </Top>
             <Bottom>
                 <Info>
-                    {cart.products.map((product)=> (
+                    {cart.products?.map((product)=> (
                             <Product marginBottom="0 0 30px 0">
                             <ProductDetails>
                                 <Image src='https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>
                                 <Details>
-                                    <ProductName><b>Product:</b> Your favourite Sneakers</ProductName>
+                                    <ProductName><b>Product:</b> {product.title}</ProductName>
                                     <ProductId><b>ID: </b> 1234567 </ProductId>
                                     <ProductColor color="blue" />
                                     <ProductSize><b>Size:</b> 40.5 </ProductSize>
@@ -57,7 +58,7 @@ const Cart = () => {
                                 </ProductPrice>
                             </PriceDetails>
                         </Product>
-                    ))} 
+                    )) } 
                     <Hr />  
                 </Info>
                 <Summary>
