@@ -1,7 +1,7 @@
 const router= require('express').Router();
 const Cart = require('../models/Cart');
 const { verifyToken, verifyTokenAuthorization, verifyTokenAdmin } = require('./verifyToken');
-const CryptoJS = require("crypto-js");
+
 
 router.post('/',verifyToken, async (req, res) => {
     const newCart = new Cart(req.body);
@@ -15,25 +15,18 @@ router.post('/',verifyToken, async (req, res) => {
 
 router.put('/:id', verifyTokenAuthorization,async(req, res) => {
     try {
-        if (id.match(/^[0-9a-fA-F]{24}$/)) {
-                    // Yes, it's a valid ObjectId, proceed with `findById` call.
-                    const updatedCart = await Cart.findByIdAndUpdate(
-                    req.params._id,
-                    {
-                        $set: req.body
-                    },
-                    {
-                        new: true
-                    }
-                    
-        );res.status(200).json(updatedCart)
-                }
-                
-            }
-    catch (error) {
+        const id = req.params.id
+        const update = req.body
+     // Yes, it's a valid ObjectId, proceed with `findById` call.
+     const updatedCart = await Cart.findByIdAndUpdate(
+         id, update,
+            { new: true }   
+        );
+        return res.status(200).json(updatedCart);
+     } catch (error) {
                 res.status(500).json(error)
         }      
-})
+});
 
 router.delete('/:id', verifyTokenAuthorization, async(req, res)=> {
     try {
@@ -46,7 +39,7 @@ router.delete('/:id', verifyTokenAuthorization, async(req, res)=> {
 
 router.get('/find/:userId', verifyTokenAuthorization, async(req, res)=> {
     try {
-        const cart = await Cart.findOne({userId: req.params.userId});
+        const cart = await Cart.findById(req.params.userId);
         res.status(200).json(cart)
     } catch (error) {
         res.status(500).json(error)
