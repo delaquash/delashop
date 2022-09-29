@@ -3,6 +3,8 @@ const Order = require('../models/Order');
 const { verifyToken, verifyTokenAuthorization, verifyTokenAdmin } = require('./verifyToken');
 
 
+
+
 /* This is a post request to the order route. It is using the verifyToken middleware to verify that
 the user is logged in. If the user is logged in, it will create a new order in the database. */
 router.post('/',verifyToken, async (req, res) => {
@@ -19,17 +21,23 @@ router.post('/',verifyToken, async (req, res) => {
 
 the user is an admin. If the user is an admin, it will update the order in the database. */
 router.put('/:id', verifyTokenAdmin, async(req, res) => {
+    
     try {
+        const id = req.params.id;
+        const update = req.body
         const updatedOrder = await Order.findByIdAndUpdate(
-            req.params.id,
-            {
-                $set: req.body
-            },
+            /* Getting the id from the url. */
+            id, update,
+            /* Setting the new value of the order. */
+        //     {
+        //         $set: req.body
+        //     },
+        //    /* Telling the database to return the updated document. */
             {
                 new: true
             }
         );
-        res.status(200).json(updatedOrder)
+        return res.status(200).json(updatedOrder)
     } catch (error) {
         res.status(500).json(error)
     }
@@ -52,12 +60,12 @@ verify that
 the user is logged in. If the user is logged in, it will return all the orders in the database. */
 router.get('/find/:userId', verifyTokenAuthorization, async(req, res)=> {
     try {
-        const orders = await Order.find({userId: req.params.userId});
-        res.status(200).json(orders)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-})
+        const orders = await Order.findById(req.params.userId);
+        res.status(200).json(orders);
+      } catch (err) {
+        res.status(500).json(err);
+      }
+});
 
 /* This is a get request to the order route. It is using the verifyTokenAdmin middleware to verify that
 
@@ -67,7 +75,7 @@ router.get('/', verifyTokenAdmin, async(req, res)=> {
         const orders = await Order.find();
         res.status(200).json(orders)
     } catch (error) {
-        res.status(500).json(error) 
+        res.status(500).json(error)
     }
 })
 
