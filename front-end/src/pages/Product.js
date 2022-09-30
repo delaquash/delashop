@@ -63,7 +63,7 @@ const Product = () => {
                 {product.colors?.map((color)=> (
                    <FilterColor 
                       color={color}
-                      key={color}
+                      key={color._id}
                       onClick={()=>setColor(color)}
                     />
                 ))}
@@ -74,7 +74,7 @@ const Product = () => {
                   onChange={(e)=>setSize(e.target.value)}
               >
                 {product.sizes?.map((size)=> (
-                  <FilterSizeOption key={size}>
+                  <FilterSizeOption key={size._id}>
                       {size}
                   </FilterSizeOption>
                 ))}

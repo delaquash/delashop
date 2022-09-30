@@ -13,16 +13,19 @@ router.post('/',verifyToken, async (req, res) => {
     }
 })
 
-router.put('/:id', verifyTokenAuthorization,async(req, res) => {
+router.put('/:id', verifyTokenAuthorization, async(req, res) => {
     try {
-        const id = req.params.id
+        const  id  = req.params.id
+        console.log(id);
         const update = req.body
      // Yes, it's a valid ObjectId, proceed with `findById` call.
-     const updatedCart = await Cart.findByIdAndUpdate(
-         id, update,
+        const updatedCart = await Cart.findByIdAndUpdate(
+         id.trim(), update,
             { new: true }   
         );
-        return res.status(200).json(updatedCart);
+        console.log(updatedCart)
+      res.status(200).json(updatedCart);
+        
      } catch (error) {
                 res.status(500).json(error)
         }      
@@ -44,7 +47,7 @@ router.get('/find/:userId', verifyTokenAuthorization, async(req, res)=> {
     } catch (error) {
         res.status(500).json(error)
     }
-})
+});
 
 router.get('/', verifyTokenAdmin, async(req, res)=> {
     try {

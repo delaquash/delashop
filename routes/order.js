@@ -23,7 +23,6 @@ the user is an admin. If the user is an admin, it will update the order in the d
 router.put('/:id', verifyTokenAdmin, async(req, res) => {
     try {
         const id = req.params.id;
-       
         const update = req.body
         const updatedOrder = await Order.findByIdAndUpdate(
             /* Getting the id from the url. */
@@ -41,7 +40,6 @@ router.put('/:id', verifyTokenAdmin, async(req, res) => {
         return res.status(200).json(updatedOrder)
     } catch (error) {
         res.status(500).json(error)
-        console.log(error)
     }
 })
 

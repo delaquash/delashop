@@ -65,12 +65,11 @@ const Products = ({cat, filters, sorts}) => {
             <Product
                 item={item}
                 key={item.id} 
-            />) : products.slice(0, 8).map((item)=> 
+            />) : products.slice(0, 12).map((item)=> 
             <Product
                 item={item}
                 key={item.id} 
             />)}
-            console.log(item)
     </Container>
   )
 }

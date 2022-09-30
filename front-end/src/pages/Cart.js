@@ -16,7 +16,6 @@ import {Container, Hr, Wrapper, Title,
 
 const Cart = () => {
     const cart = useSelector(state=> state.cart);
-    console.log(cart)
   return (
     <Container>
         <Navbar />
@@ -34,27 +33,28 @@ const Cart = () => {
             <Bottom>
                 <Info>
                     {cart.products?.map((product)=> (
-                            <Product marginBottom="0 0 30px 0">
-                            <ProductDetails>
-                                <Image src='https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>
-                                <Details>
-                                    <ProductName><b>Product:</b> {product.title}</ProductName>
-                                    <ProductId><b>ID: </b> 1234567 </ProductId>
-                                    <ProductColor color="blue" />
-                                    <ProductSize><b>Size:</b> 40.5 </ProductSize>
-                                </Details>
+                            <Product marginBottom="0 0 30px 0" key={product._id}>
+                                <ProductDetails>
+                                    <Image src={product.img}/>
+                                        <Details>
+                                                
+                                            <ProductName><b>Product:</b> {product.title}</ProductName>
+                                            <ProductId><b>ID: </b> {product._id}</ProductId>
+                                            <ProductColor color={product.color} />
+                                            <ProductSize><b>Size:</b> {product.size} </ProductSize>
+                                        </Details>
                             </ProductDetails>
                             <PriceDetails>
                                 <ProductAmountContainer>
                                     <Add />
                                         <ProductAmount>
-                                            2
+                                            {product.quantity}
                                         </ProductAmount>
                                     {/* Remove is suppose to be here */}
                                     <Remove />
                                 </ProductAmountContainer>
                                 <ProductPrice>
-                                    &#8358; 30,000
+                                    &#8358; {product.price * product.quantity}
                                 </ProductPrice>
                             </PriceDetails>
                         </Product>
@@ -65,7 +65,7 @@ const Cart = () => {
                     <SummaryTitle>Order Summary</SummaryTitle>
                     <SummaryItem>
                         <SummaryItemText>Subtotal</SummaryItemText>
-                        <SummaryItemPrice> &#8358; 50,000</SummaryItemPrice>
+                        <SummaryItemPrice> &#8358; {cart.total}</SummaryItemPrice>
                     </SummaryItem>
                     <SummaryItem>
                         <SummaryItemText>Shipping Cost</SummaryItemText>
@@ -77,7 +77,7 @@ const Cart = () => {
                     </SummaryItem>
                     <SummaryItem type="total">
                         <SummaryItemText>Total</SummaryItemText>
-                        <SummaryItemPrice> &#8358; 54500</SummaryItemPrice>
+                        <SummaryItemPrice> &#8358; {cart.total}</SummaryItemPrice>
                     </SummaryItem>
                     <Button>CHECKOUT NOW</Button>
                 </Summary>
