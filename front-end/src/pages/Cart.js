@@ -14,6 +14,8 @@ import {Container, Hr, Wrapper, Title,
     } from '../styles/pages/Cart';
 
 
+const KEY = process.env.PAYSTACK_KEY
+
 const Cart = () => {
     const cart = useSelector(state=> state.cart);
   return (
