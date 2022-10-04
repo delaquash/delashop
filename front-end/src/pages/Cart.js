@@ -12,12 +12,14 @@ import {Container, Hr, Wrapper, Title,
         ProductAmountContainer, ProductAmount, SummaryTitle,
         SummaryItem, SummaryItemText, SummaryItemPrice, Button
     } from '../styles/pages/Cart';
+import { Link } from 'react-router-dom';
 
 
-const KEY = process.env.PAYSTACK_KEY
+
 
 const Cart = () => {
     const cart = useSelector(state=> state.cart);
+    
   return (
     <Container>
         <Navbar />
@@ -81,7 +83,9 @@ const Cart = () => {
                         <SummaryItemText>Total</SummaryItemText>
                         <SummaryItemPrice> &#8358; {cart.total}</SummaryItemPrice>
                     </SummaryItem>
-                    <Button>CHECKOUT NOW</Button>
+                        <Button>
+                            <Link to="/payment">Check Out</Link>
+                        </Button>
                 </Summary>
             </Bottom>
         </Wrapper>
