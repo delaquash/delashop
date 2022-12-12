@@ -1,10 +1,10 @@
 
 import { useState, useEffect } from 'react';
 import { Add, Remove } from "@material-ui/icons";
-import Announcement from '../components/Announcement.js';
-import Footer from '../components/Footer.js';
-import Navbar from '../components/Navbar.js';
-import Newletter from '../components/Newletter.js';
+import Announcement from '../components/Announcement.jsx';
+import Footer from '../components/Footer.jsx';
+import Navbar from '../components/Navbar.jsx';
+import Newletter from '../components/Newletter.jsx';
 import { Container, Wrapper, ImageContainer, Image, InfoContainer, Title,Desc, Price, FilterSize, FilterContainer, FilterSizeOption, FilterTitle, FilterColor, Filter, AddContainer, AmountContainer, Amount, Button } from "../styles/pages/SingleProduct";
 import { useLocation } from 'react-router-dom';
 import { publicRequest } from '../RequestMethod.js';

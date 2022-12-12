@@ -1,15 +1,21 @@
 import React, { useState } from "react"
+import { createGlobalStyle } from "styled-components";
 import { useSelector } from 'react-redux';
 import { PaystackButton } from "react-paystack"
-import "./CheckOut.js"
+import {Label, Input, PaymentButton,CheckOut, CheckOutForm, ItemDetails,Item, Container } from "../styles/pages/CheckOut.js"
 
 const publicKey = process.env.PAYSTACK_KEY
 
+// const GlobalStyles = createGlobalStyle `
+//     body {
+//       font-family: 'Roboto', sans-serif;
+//     }
+// `
 
 const Payment = () => {
 //   const publicKey = "pk_your_public_key_here"
-  // const amount = useSelector(state=> state.cart);
-  const amount = 10000
+  const amount = useSelector(state=> state.cart);
+  // const amount = 10000
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
   const [phone, setPhone] = useState("")
@@ -30,40 +36,43 @@ const Payment = () => {
 
   return (
     <Payment>
-      <div className="container">
-        <div className="item">
+      {/* <GlobalStyles /> */}
+      <Container>
+        <Item>
           <img src="https://image.shutterstock.com/image-vector/vector-shopping-cart-icon-260nw-1377206405.jpg" alt=""/>
-          <div className="item-details">
+          <ItemDetails>
             <p style={{fontSize: '22px'}}>Dancing Shoes</p>
             <p  style={{fontWeight: 'bolder'}}>{amount}</p>
-          </div>
-        </div>
-        <div className="checkout-form">
+          </ItemDetails>
+        </Item>
+        <CheckOutForm>
           <form>
             <Label>Name</Label>
-            <input
+            <Input
               type="text"
               id="name"
               onChange={(e) => setName(e.target.value)}
             />
             <Label>Email</Label>
-            <input
+            <Input
               type="text"
               id="email"
               onChange={(e) => setEmail(e.target.value)}
             />
             <Label>Phone</Label>
-            <input
+            <Input
               type="text"
               id="phone"
               onChange={(e) => setPhone(e.target.value)}
             />
           </form>
-          <PaystackButton {...componentProps} />
-        </div>
-      </div>
+          <PaymentButton>
+            <PaystackButton {...componentProps} />
+          </PaymentButton>
+        </CheckOutForm>
+      </Container>
     </Payment>
-  )
+  );
 }
 
-export default Payment
+export default Payment;

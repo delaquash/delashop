@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import Announcement from '../components/Announcement.js';
-import Navbar from '../components/Navbar.js';
-import Newletter from '../components/Newletter.js';
-import Slider from '../components/Slider.js';
-import Products from '../components/Products.js';
-import Categories from '../components/Categories.js';
-import Footer from '../components/Footer.js';
+import Announcement from '../components/Announcement.jsx';
+import Navbar from '../components/Navbar.jsx';
+import Newletter from '../components/Newletter.jsx';
+import Slider from '../components/Slider.jsx';
+import Products from '../components/Products.jsx';
+import Categories from '../components/Categories.jsx';
+import Footer from '../components/Footer.jsx';
 
 const Home = () => {
   const [scrolling, setScrolling ] = useState(false);

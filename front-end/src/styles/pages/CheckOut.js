@@ -1,4 +1,5 @@
 
+
 import styled from 'styled-components';
 
 export const Payment = styled.div`
@@ -22,9 +23,9 @@ export const Item = styled.div`
       position: relative;
 `;
 export const ItemImage = styled.div`
-    height: 430px;
-  width: 100%;
-  object-fit: cover;
+      height: 430px;
+      width: 100%;
+      object-fit: cover;
 `;
 export const ItemDetails = styled.div`
     position: absolute;
@@ -74,7 +75,13 @@ export const PaymentButton = styled.div`
       height: 45px;
       margin-top: 40px;
 `;
-// export const Payment = styled.div``;
+export const Input = styled.input`
+    background-color: transparent;
+    border: 1px solid #cecece;
+    border-radius: 5px;
+    color: #e0eafc;
+    height: 35px;
+`;
 // export const Payment = styled.div``;
 
 
@@ -124,11 +131,7 @@ export const PaymentButton = styled.div`
 // }
 
 // .checkout-field input {
-//   background-color: transparent;
-//   border: 1px solid #cecece;
-//   border-radius: 5px;
-//   color: #e0eafc;
-//   height: 35px;
+//   
 // }
 
 // .paystack-button {
