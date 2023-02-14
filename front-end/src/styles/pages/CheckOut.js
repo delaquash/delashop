@@ -1,14 +1,13 @@
-
-
 import styled from 'styled-components';
 
-export const Payment = styled.div`
+export const Payment = styled.div `
   text-align: center;
   font-family: Roboto;
   letter-spacing: 0.1rem;
 `;
- export const Container = styled.div`
+export const Container = styled.div `
        display: flex;
+       background-color: black;
       flex-direction: row;
       margin: 5% auto;
       width: 635px;
@@ -18,16 +17,16 @@ export const Payment = styled.div`
 `;
 
 
-export const Item = styled.div`
+export const Item = styled.div `
       width: 50%;
       position: relative;
 `;
-export const ItemImage = styled.div`
+export const ItemImage = styled.div `
       height: 430px;
       width: 100%;
       object-fit: cover;
 `;
-export const ItemDetails = styled.div`
+export const ItemDetails = styled.div `
     position: absolute;
     bottom: 0;
     margin-bottom: 5px;
@@ -36,7 +35,7 @@ export const ItemDetails = styled.div`
     text-align: left;
 `;
 
-export const CheckOut = styled.div`
+export const CheckOut = styled.div `
     background: #84a17d; /* fallback for old browsers */
     display: flex;
     flex-direction: column;
@@ -44,7 +43,7 @@ export const CheckOut = styled.div`
     height: 430px;
     width: 50%;
 `;
-export const CheckOutForm = styled.div`
+export const CheckOutForm = styled.form `
       padding: 20px 20px;
 `;
 // export const CheckOutField = styled.div`
@@ -52,7 +51,7 @@ export const CheckOutForm = styled.div`
 //     flex-direction: column;
 //     margin-bottom: 20px;
 // `;
-export const Label = styled.label`
+export const Label = styled.label `
       text-align: left;
       color: #e0eafc;
       font-size: 10px;
@@ -60,7 +59,7 @@ export const Label = styled.label`
       text-transform: uppercase;
       letter-spacing: 0.1rem;
 `;
-export const PaymentButton = styled.div`
+export const PaymentButton = styled.div `
       cursor: pointer;
       text-align: center;
       font-size: 10px;
@@ -75,14 +74,27 @@ export const PaymentButton = styled.div`
       height: 45px;
       margin-top: 40px;
 `;
-export const Input = styled.input`
-    background-color: transparent;
-    border: 1px solid #cecece;
-    border-radius: 5px;
-    color: #e0eafc;
-    height: 35px;
+
+export const CartDetails = styled.p `
+      font-size: 22px;
+      display: flex;
+      padding: 40px;
+      /* align-items: center;
+      justify-content: center; */
+      /* margin-top: 45px; */
+      position: absolute;
 `;
-// export const Payment = styled.div``;
+
+
+export const Input = styled.input `
+background - color: transparent;
+border: 1 px solid# cecece;
+border - radius: 5 px;
+color: #e0eafc;
+height: 35 px;
+`;
+// export const Payment = styled.div`
+// `;
 
 
 // .overlay-effect {
@@ -98,7 +110,7 @@ export const Input = styled.input`
 // }
 
 // .item-details {
-  
+
 // }
 
 // .item-details__title {
@@ -114,11 +126,11 @@ export const Input = styled.input`
 // }
 
 // .checkout-form {
-  
+
 // }
 
 // .checkout-field {
-  
+
 // }
 
 // .checkout-field label {
@@ -135,5 +147,5 @@ export const Input = styled.input`
 // }
 
 // .paystack-button {
-  
+
 // }

@@ -12,10 +12,14 @@ import {Container, Hr, Wrapper, Title,
         SummaryItem, SummaryItemText, SummaryItemPrice, Button
     } from '../styles/pages/Cart';
 import { useSelector } from "react-redux";
-
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-    const cart = useSelector(state=> state.cart)
+    const cart = useSelector(state=> state.cart);
+    const hello =() => {
+        console.log(hello);
+    }
+    console.log(cart)
   return (
     <Container>
         <Navbar />
@@ -33,57 +37,32 @@ const Cart = () => {
             <Bottom>
                 <Info>
                     {cart.products.map((product)=> (
-                        
                         <Product marginBottom="0 0 30px 0">
                         <ProductDetails>
-                            <Image src='https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>
-                            <Details>console.log(cart);
-                                <ProductName><b>Product:</b> Your favorite Sneakers</ProductName>
-                                <ProductId><b>ID: </b> 1234567 </ProductId>
-                                <ProductColor color="blue" />
-                                <ProductSize><b>Size:</b> 40.5 </ProductSize>
+                            <Image src={product.img} />
+                            <Details>
+                                <ProductName><b>Product:</b> Your favorite {product.title}</ProductName>
+                                <ProductId><b>ID: </b> {product._id} </ProductId>
+                                <ProductColor color={product.color} />
+                                <ProductSize><b>Size:</b>{product.size} </ProductSize>
                             </Details>
                         </ProductDetails>
                         <PriceDetails>
                             <ProductAmountContainer>
                                 <Add />
                                     <ProductAmount>
-                                        2
+                                        {product.quantity}
                                     </ProductAmount>
                                 {/* Remove is suppose to be here */}
                                 <Remove />
                             </ProductAmountContainer>
                             <ProductPrice>
-                                &#8358; 30,000
+                                &#8358; {product.price * product.quantity}
                             </ProductPrice>
                         </PriceDetails>
                     </Product>
                     ))}
                     <Hr />
-                    {/* <Hr />
-                    <Product>
-                        <ProductDetails>
-                            <Image src='https://images.unsplash.com/photo-1648329008114-bce0ec0b5950?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' />
-                                <Details>
-                                    <ProductName><b>Product:</b> Your Elite Yoruba Agbada(s)</ProductName>
-                                    <ProductId><b>ID: </b> 1234567 </ProductId>
-                                    <ProductColor color="black" />
-                                    <ProductSize><b>Size:</b> 21 </ProductSize>
-                                </Details>
-                        </ProductDetails>
-                        <PriceDetails>
-                            <ProductAmountContainer>
-                                <Add />
-                                    <ProductAmount>
-                                        2
-                                    </ProductAmount>
-                                <Remove />
-                            </ProductAmountContainer>
-                            <ProductPrice>
-                                &#8358; 20,000
-                            </ProductPrice>
-                        </PriceDetails>
-                    </Product> */}
                 </Info>
                 <Summary>
                     <SummaryTitle>Order Summary</SummaryTitle>
@@ -101,9 +80,15 @@ const Cart = () => {
                     </SummaryItem>
                     <SummaryItem type="total">
                         <SummaryItemText>Total</SummaryItemText>
-                        <SummaryItemPrice> &#8358; 54500</SummaryItemPrice>
+                        <SummaryItemPrice> &#8358; {cart.total}</SummaryItemPrice>
                     </SummaryItem>
-                    <Button>CHECKOUT NOW</Button>
+                    
+                        <Button onClick={hello}>
+                            <Link to='/payment'>
+                            Make Payment
+                            </Link>
+                        </Button>
+                    
                 </Summary>
             </Bottom>
         </Wrapper>
