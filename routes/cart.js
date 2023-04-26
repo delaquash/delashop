@@ -1,8 +1,6 @@
-
-
+import express from "express";
 import { createCart, deleteCart, getAllCart, getCart, updateCart } from "../controllers/cart";
 import { verifyToken, verifyTokenAuthorization, verifyTokenAdmin } from "./verifyToken";
-import express from "express";
 const router= express.Router();
 
 router.post("/",verifyToken,createCart);
