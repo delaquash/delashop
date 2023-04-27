@@ -1,6 +1,6 @@
-import Products from "../models/Products";
+const Product = require("../models/Products.js");
 
-export const createProduct = async (req, res) => {
+const createProduct = async (req, res) => {
 	const newProduct = new Product(req.body);
 	try {
 		const savedProduct = await newProduct.save();
@@ -10,7 +10,7 @@ export const createProduct = async (req, res) => {
 	}
 };
 
-export const updateProduct = async (req, res) => {
+const updateProduct = async (req, res) => {
 	try {
 		const updatedProduct = await Product.findByIdAndUpdate(req.params.id, {
 			$set: req.body,
@@ -23,7 +23,7 @@ export const updateProduct = async (req, res) => {
 	}
 };
 
-export const deleteProduct = async (req, res)=> {
+const deleteProduct = async (req, res)=> {
 	try {
 		await Product.findByIdAndDelete(req.params.id);
 		res.status(200).json("User has been deleted");
@@ -32,7 +32,7 @@ export const deleteProduct = async (req, res)=> {
 	}
 };
 
-export const getProduct = async(req, res) => {
+const getProduct = async(req, res) => {
 	try {
 		const product = await Product.findById(req.params.id);
 		res.status(200).json(product);
@@ -41,7 +41,7 @@ export const getProduct = async(req, res) => {
 	}
 };
 
-export const getAllProduct = async(req, res) => {
+const getAllProduct = async(req, res) => {
 	const qNew = req.params.new;
 	const qCategory = req.params.category;
 	try {
@@ -61,4 +61,6 @@ export const getAllProduct = async(req, res) => {
 	} catch (error) {
 		res.status(500).json(error);
 	}
-}
+};
+
+export { createProduct, deleteProduct, getAllProduct, getProduct, updateProduct };

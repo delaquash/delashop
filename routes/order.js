@@ -1,7 +1,7 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import express from "express";
-import { verifyToken, verifyTokenAuthorization, verifyTokenAdmin } from "./verifyToken";
-import { createOrder, deleteOrder, findAllOrder, findOrder, getIncome, updateOrder } from "../controllers/order";
+import { verifyToken, verifyTokenAuthorization, verifyTokenAdmin } from "./verifyToken.js";
+import { createOrder, deleteOrder, findAllOrder, findOrder, getIncome, updateOrder } from "../controllers/order.js";
 const router= express.Router();
 
 /* This is a post request to the order route. It is using the verifyToken middleware to verify that

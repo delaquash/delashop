@@ -1,6 +1,7 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+const { Schema } = mongoose;
 
-const transactionSchema =new mongoose.Schema(
+const transactionSchema =new Schema(
 	{
 		card_number: {
 			type: String,
@@ -56,4 +57,4 @@ const transactionSchema =new mongoose.Schema(
 	}
 );
 
-module.exports = mongoose.model("Transaction", transactionSchema);
+export default model("Transaction", transactionSchema);

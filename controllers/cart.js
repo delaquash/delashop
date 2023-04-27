@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-import Cart from "../models/Cart";
+import Cart from "../models/Cart.js";
 
-export const createCart=async (req, res) => {
+const createCart=async (req, res) => {
 	const newCart = new Cart(req.body);
 	try {
 		const savedCart = await newCart.save();
@@ -11,7 +11,7 @@ export const createCart=async (req, res) => {
 	}
 };
 
-export const updateCart = async(req, res) => {
+const updateCart = async(req, res) => {
 	try {
 		const  id  = req.params.id;
 		console.log(id);
@@ -29,7 +29,7 @@ export const updateCart = async(req, res) => {
 	}      
 };
 
-export const deleteCart =  async(req, res)=> {
+const deleteCart =  async(req, res)=> {
 	try {
 		await findByIdAndDelete(req.params.id);
 		res.status(200).json("Cart has been deleted successfully.....");
@@ -37,7 +37,7 @@ export const deleteCart =  async(req, res)=> {
 		res.status(500).json(error);
 	}
 };
-export const getCart = async(req, res)=> {
+const getCart = async(req, res)=> {
 	try {
 		const cart = await findById(req.params.userId);
 		res.status(200).json(cart);
@@ -46,7 +46,7 @@ export const getCart = async(req, res)=> {
 	}
 };
 
-export const getAllCart = async(req, res)=> {
+const getAllCart = async(req, res)=> {
 	try {
 		const carts = await find();
 		res.status(200).json(carts);
@@ -54,3 +54,5 @@ export const getAllCart = async(req, res)=> {
 		res.status(500).json(error); 
 	}
 };
+
+export { getAllCart, getCart, deleteCart, updateCart, createCart };

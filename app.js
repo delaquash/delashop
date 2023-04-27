@@ -1,14 +1,13 @@
-const express = require("express");
-
-const  mongoose  = require("mongoose");
-const user = require("./routes/user");
-const dotenv = require("dotenv");
-const authRouter = require("./routes/auth");
-const productRouter = require("./routes/product");
-const cartRouter = require("./routes/cart");
-const orderRouter = require("./routes/order");
-const walletRouter = require("./routes/wallet");
-const cors = require("cors");
+import cors from "cors";
+import dotenv from "dotenv";
+import express from "express";
+import mongoose from "mongoose";
+import authRouter from "./routes/auth.js";
+import cartRouter from "./routes/cart.js";
+import orderRouter from "./routes/order.js";
+import productRouter from "./routes/product.js";
+import user from "./routes/user.js";
+import walletRouter from "./routes/wallet.js";
 
 const app= express();
 dotenv.config();

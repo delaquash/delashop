@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-mixed-spaces-and-tabs */
-import Order from "../models/Order";
+import Order from "../models/Order.js";
 
 export const createOrder = async (req, res) => {
 	const newOrder = new Order(req.body);

@@ -1,8 +1,8 @@
-import express from "express";
-import { createProduct, deleteProduct, getAllProduct, getProduct, updateProduct } from "../controllers/product";
-import {  verifyTokenAdmin } from "./verifyToken";
+import { Router } from "express";
+import { createProduct, deleteProduct, getAllProduct, getProduct, updateProduct } from "../controllers/product.js";
+import { verifyTokenAdmin } from "./verifyToken.js";
 
-const router= express.Router();
+const router= Router();
 /* This is a post request to the server. It is creating a new product. */
 router.post("/", verifyTokenAdmin, createProduct);
 
@@ -18,4 +18,4 @@ router.get("/find/:id", getProduct);
 /* Getting the products from the database. */
 router.get("/", getAllProduct);
 
-module.exports = router;
+export default router;
