@@ -13,4 +13,5 @@ const WalletSchema = Schema(
 	{ timestamps: true }
 );
 
-module.exports = model("Wallet", WalletSchema);
+const WalletModel =mongoose.model("Wallet", WalletSchema);
+export default WalletModel;

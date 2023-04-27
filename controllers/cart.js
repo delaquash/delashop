@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
-import Cart from "../models/Cart.js";
+import CartModel from "../models/Cart.js";
 
 const createCart=async (req, res) => {
-	const newCart = new Cart(req.body);
+	const newCart = new CartModel(req.body);
 	try {
 		const savedCart = await newCart.save();
 		res.status(200).json(savedCart);
