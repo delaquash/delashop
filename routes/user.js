@@ -1,6 +1,6 @@
 const router= require('express').Router();
 const User = require('../models/User').default;
-const { verifyToken, verifyTokenAuthorization, verifyTokenAdmin } = require('./verifyToken');
+const { verifyToken, verifyTokenAuthorization, verifyTokenAdmin } = require('./verifyToken').default;
 const CryptoJS = require("crypto-js");
 
 /* Updating the user's username. */

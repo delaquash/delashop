@@ -1,7 +1,7 @@
 import cors from "cors";
-import dotenv from "dotenv";
-import express from "express";
-import mongoose from "mongoose";
+import { config } from "dotenv";
+import express, { json } from "express";
+import { connect } from "mongoose";
 import authRouter from "./routes/auth.js";
 import cartRouter from "./routes/cart.js";
 import orderRouter from "./routes/order.js";
@@ -10,17 +10,17 @@ import user from "./routes/user.js";
 import walletRouter from "./routes/wallet.js";
 
 const app= express();
-dotenv.config();
+config();
 
 // DB Connection
-mongoose.connect(process.env.MONGO_URL)
+connect(process.env.MONGO_URL)
 	.then(()=> 
 		console.log("DB connections is successful"))
 	.catch((err) => {
 		console.log(err);
 	});
 
-app.use(express.json());
+app.use(json());
 app.use(cors());
 // Routes
 // app.use('/', (req, res) => {

@@ -1,5 +1,5 @@
-const jwt = require("jsonwebtoken");
-
+import jwt from "jsonwebtoken";
+const {  verify } = jwt;
 /**
  * If the request has a token in the header, verify the token and if it's valid, add the user to the
  * request and call the next function. If the token is not valid, send a 403 response. If there is no
@@ -8,11 +8,13 @@ const jwt = require("jsonwebtoken");
  * @param res - The response object.
  * @param next - This is a function that you call when you are done with your middleware.
  */
-const verifyToken =(req, res, next) => {
+
+
+export const verifyToken =(req, res, next) => {
 	const authHeaders = req.headers.token;
 	if(authHeaders) {
 		const token = authHeaders.split(" ")[1];
-		jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+		verify(token, process.env.JWT_SECRET, (err, user) => {
 			// if(err) res.status(403).json("Token is not valid");
 			// console.log(err);
 			// req.user = user
@@ -36,7 +38,7 @@ const verifyToken =(req, res, next) => {
  * @param res - the response object
  * @param next - a function that will be called when the middleware is done.
  */
-const verifyTokenAuthorization =(req, res, next)=> {
+export const verifyTokenAuthorization =(req, res, next)=> {
 	verifyToken(req, res, () => {
 		if(req.user.id === req.params.id || req.user.isAdmin) {
 			next();
@@ -52,7 +54,7 @@ const verifyTokenAuthorization =(req, res, next)=> {
  * @param res - the response object
  * @param next - a function that will be called when the middleware is done.
  */
-const verifyTokenAdmin=(req, res, next) => {
+export const verifyTokenAdmin=(req, res, next) => {
 	verifyToken(req, res, () => {
 		if(req.user.isAdmin){
 			next();
@@ -61,5 +63,3 @@ const verifyTokenAdmin=(req, res, next) => {
 		}
 	});
 };
-
-module.exports =  { verifyToken, verifyTokenAuthorization, verifyTokenAdmin };
