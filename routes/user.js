@@ -3,7 +3,6 @@ import User from "../models/User.js";
 import { default as AES } from "crypto-js";
 import { verifyTokenAdmin, verifyTokenAuthorization } from "./verifyToken.js";
 const router = express.Router();
-// const { verifyToken, verifyTokenAuthorization, verifyTokenAdmin } = verifyToken.js;
 
 /* Updating the user's username. */
 router.put("/:id",verifyTokenAuthorization, async (req, res) => {

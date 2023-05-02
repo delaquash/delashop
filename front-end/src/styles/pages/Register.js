@@ -33,6 +33,8 @@ export const Wrapper  = styled.div`
 export const Form = styled.form`
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 `;
 export const Input = styled.input`
     flex: 1;
@@ -41,6 +43,7 @@ export const Input = styled.input`
     border-radius: 10px;
     margin:20px 10px 0px 0px;
     padding: 10px;
+    outline: none;
 `;
 export const Agreement = styled.span`
     font-size: 18px;
@@ -54,12 +57,13 @@ export const Button = styled.button`
     /* margin-top: 10px; */
     padding: 15px 20px;
     color: white;
+   
     background-color: black;
     cursor: pointer;
 
     &:hover {
-        background-color: black;
-        color: green;
+        background-color: white;
+        color: black;
         font-size: 15px;
         font-weight: 500;
     }
