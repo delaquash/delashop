@@ -1,9 +1,11 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-const router = require("express").Router();
+import express from "express";
 import { default as AES, default as enc } from "crypto-js";
 import sign from "jsonwebtoken";
 import User from "../models/User.js";
+
+const router = express.Router();
 
 // Register
 router.post("/register", async(req, res) => {

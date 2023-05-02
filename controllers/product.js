@@ -1,7 +1,7 @@
-const Product = require("../models/Products.js");
+import ProductModel from "../models/Products.js";
 
 const createProduct = async (req, res) => {
-	const newProduct = new Product(req.body);
+	const newProduct = new ProductModel(req.body);
 	try {
 		const savedProduct = await newProduct.save();
 		res.status(200).json(savedProduct);
@@ -12,7 +12,7 @@ const createProduct = async (req, res) => {
 
 const updateProduct = async (req, res) => {
 	try {
-		const updatedProduct = await Product.findByIdAndUpdate(req.params.id, {
+		const updatedProduct = await ProductModel.findByIdAndUpdate(req.params.id, {
 			$set: req.body,
 		}, {
 			new: true,
@@ -25,7 +25,7 @@ const updateProduct = async (req, res) => {
 
 const deleteProduct = async (req, res)=> {
 	try {
-		await Product.findByIdAndDelete(req.params.id);
+		await ProductModel.findByIdAndDelete(req.params.id);
 		res.status(200).json("User has been deleted");
 	} catch (error) {
 		res.status(500).json(error);
@@ -34,7 +34,7 @@ const deleteProduct = async (req, res)=> {
 
 const getProduct = async(req, res) => {
 	try {
-		const product = await Product.findById(req.params.id);
+		const product = await ProductModel.findById(req.params.id);
 		res.status(200).json(product);
 	} catch (error) {
 		res.status(500).json(error);
@@ -47,7 +47,7 @@ const getAllProduct = async(req, res) => {
 	try {
 		let products;
 		if(qNew){
-			products = await Product.find().sort({ createdAt: -1}).limit(1);
+			products = await ProductModel.find().sort({ createdAt: -1}).limit(1);
 		} else if(qCategory){
 			products = await Product.find({
 				categories : {
