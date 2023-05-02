@@ -14,5 +14,4 @@ export { default as  CatergoryItem} from './components/CategoryItem';
 export { default as ProductList } from './pages/ProductList';
 export { default as Login } from './pages/Login';
 export { default as Register } from './pages/Register';
-// export { default as ProductColor } from './pages/ProductColor';
 

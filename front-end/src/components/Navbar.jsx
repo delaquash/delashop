@@ -1,14 +1,13 @@
+import { useSelector } from 'react-redux';
 import { Search,  } from '@material-ui/icons';
 import  ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import { Badge } from '@mui/material';
-
 import  { Container, Wrapper, Language, SearchContainer, Input, Left, Center, Logo, Right, MenuItem } from '../styles/Components/Navbar';
-
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-    
+    const quantity = useSelector(state=> state.cart.quantity)
   return (
-   
     <Container>
         <Wrapper>
             <Left>
@@ -20,7 +19,11 @@ const Navbar = () => {
                         <Search  style={{color: "gray", fontSize: "16px"}} />
                     </SearchContainer>      
             </Left>
-            <Center><Logo>Delashop</Logo></Center>
+            <Center>
+                <Logo>
+                    <Link to="/">Delashop</Link>
+                </Logo>
+            </Center>
             <Right>
                 <MenuItem>
                     ABOUT US               
@@ -31,11 +34,13 @@ const Navbar = () => {
                 <MenuItem>
                     LOGIN                
                 </MenuItem>
-                <MenuItem>
-                <Badge badgeContent={4} color="primary">
-                    <ShoppingCartOutlinedIcon />
-                </Badge>               
-                </MenuItem>
+                <Link to="/cart">
+                    <MenuItem>
+                        <Badge badgeContent={quantity} color="primary">
+                            <ShoppingCartOutlinedIcon />
+                        </Badge>               
+                    </MenuItem>
+                </Link>
             </Right>
         </Wrapper>
     </Container>
